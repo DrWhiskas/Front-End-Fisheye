@@ -7,7 +7,7 @@
                 console.log(data);
                  displayData(data.photographers);
             });
-        const photographers = [
+       /* const photographers = [
             {
                 "name": "Ma data test",
                 "id": 1,
@@ -26,7 +26,7 @@
                 "price": 500,
                 "portrait": "account.png"
             },
-        ]
+        ]*/
         // et bien retourner le tableau photographers seulement une fois
         return ({
             photographers: [...photographers, ...photographers, ...photographers]})
