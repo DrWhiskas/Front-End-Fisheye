@@ -15,14 +15,13 @@ function photographerFactory(data) {
         // CITY
         const card = document.createElement('h3'); 
         card.textContent= city + " ," + country ;
-        card.style.color = "darkred";
+        card.classList.add ("oui");
 
         card.style.margin = "0";
         // TAGLINE
         const nTag = document.createElement('h3'); 
         nTag.textContent = tagline;
         nTag.style.margin = "0";
-    
         //PRICE    
         const nPrice = document.createElement('h3'); 
         nPrice.textContent = price + "€/jour";
