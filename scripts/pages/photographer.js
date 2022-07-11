@@ -26,6 +26,16 @@ async function getPhotographers() {
             fetch(mRequest)
             .then(res => res.json())
             .then(data => {
+                const queryString = window.location.search;
+                const urlParam = new URLSearchParams(queryString); 
+                const photographerId = urlParam.get('id');
+                console.log(photographerId);
+
+                data.media.forEach(media => {
+                    if(media.photographerId == photographerId){
+                        
+                    }
+                });
                 console.log(data);
                  displayData(data.media);
             });
@@ -33,6 +43,7 @@ async function getPhotographers() {
             media: [...media, ...media, ...media]})
     }
 
+    getMedia();
 
 
     
