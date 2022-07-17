@@ -44,6 +44,7 @@ async function getPhotographers() {
     }
 
     getMedia();
+    
 
 
     
