@@ -42,7 +42,6 @@ async function getPhotographers() {
         return ({
             media: [...media, ...media, ...media]})
     }
-
     getMedia();
     
 
