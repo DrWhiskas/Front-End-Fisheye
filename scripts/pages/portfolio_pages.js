@@ -15,7 +15,7 @@
 
                 data.media.forEach(media =>{
                     if(media.photographerId == photographerId){
-                        displayData(data.media);
+                        displayData(media);
 
                     }
                     if(media.photographerId !== photographerId){
@@ -34,9 +34,9 @@
     async function displayData(media) {
             const mediaSection = document.querySelector(".photograph_portfolio");
 
-            media.forEach((currentMedia) => {
-                const portfolioPicture = portfolioFactory(currentMedia);
+           
+                const portfolioPicture = portfolioFactory(media);
                 const userPictureDOM = portfolioPicture.getPhotographersPortfolio();
                 mediaSection.appendChild(userPictureDOM);
-            });
+
         };

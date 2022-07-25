@@ -6,30 +6,28 @@
 getPhotographersId();
 */
 
-/*
 function portfolioFactory(media) {
     const { portrait,title, date, price,likes,photographerId,image} = media;
-    const myPhotographerId = photographerId;
-    console.log("non",myPhotographerId)
+    const picture = `assets/Sample Photos/${photographerId}/${image}`;
+    console.log(picture)
 
     function getPhotographersPortfolio() {
         const link = document.createElement('article');
        link.innerHTML = `
             <div class ="portfolio">
-                <div class="image__info">
+                <img class = "portfolio__image" src="${picture}">
+                <div class="portfolio__info">
                     <h2>${media.title}</h2>
-                    <h2>${media.likes}
+                    <h2>${media.likes}</h2>
                 </div>
             </div>
             `
-
         return (link);
     }
-    return {photographerId , getPhotographersPortfolio }
+    return {media , getPhotographersPortfolio }
 
 }
-*/
-
+/*
 class Portfolio {
     constructor(data){
         this.__photographerId = data.photographerId
@@ -55,3 +53,4 @@ class Portfolio {
         return this.__price
     }
 }
+*/
