@@ -1,3 +1,9 @@
+/*const test = media;
+console.log("oui")
+console.log(media)
+
+*/
+
 /*
 function photographerFactory(media){
     const {id, photographerId, title, image, likes, date, price} = media;
@@ -74,3 +80,32 @@ function mediaFactory(media) {
     return { name, picture, getUserCardDOM }
 
 }
+
+
+//  TEST 
+
+    /*
+
+    function portfolioFactory(media){
+        const {id, photographerId, title, image, likes, date, price} = media;
+        const pictures = `assets/Sample Photos/${photographerId}/picture`;
+        
+        if(media.photographerId == data.id){
+            function getPhotographersPortfolio(){
+                const section = document.createElement('section');
+            section.innerHTML = `
+                <article class="test">
+                    <p> oui </p>
+                </article>
+                `
+            return (section);
+        }
+        return { getPhotographersPortfolio }
+    }
+    else{
+        console.log('error');
+    }
+
+        }
+
+    */

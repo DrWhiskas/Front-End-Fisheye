@@ -1,11 +1,11 @@
-function photographerFactory(data) {
+function portfolioFactory(data) {
     const { name, portrait,city, country, tagline, price,id} = data;
 
     const picture = `assets/photographers/${portrait}`;
 
 
 
-    function getUserCardDOM() {
+    function getPhotographersPortfolio() {
         const link = document.createElement('a');
         link.innerHTML = `
             <article class ="photographer__card">
@@ -23,6 +23,6 @@ function photographerFactory(data) {
 
         return (link);
     }
-    return { name, picture, getUserCardDOM }
+    return { name, picture, getPhotographersPortfolio }
 
 }
