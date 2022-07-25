@@ -1,4 +1,7 @@
-    async function getNewMedia(){
+
+   
+   
+   async function getNewMedia(){
         //fetch
         let myRequest = new Request("../data/photographers.json");
             fetch(myRequest)
@@ -8,11 +11,15 @@
                 const urlParam = new URLSearchParams(queryString); 
                 const photographerId = urlParam.get('id');
                 console.log(photographerId);
+                
 
                 data.media.forEach(media =>{
                     if(media.photographerId == photographerId){
                         displayData(data.media);
 
+                    }
+                    if(media.photographerId !== photographerId){
+                        console.log("sad");
                     }
                     else{
                         console.log("ERROR");
