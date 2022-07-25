@@ -1,0 +1,17 @@
+.photograph_portfolio{
+    background-color: red;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.portfolio{
+    position: relative;
+    height: 300px;
+    width: 200px;
+}
+.portfolio__picture{
+
+
+
+}

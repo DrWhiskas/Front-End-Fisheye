@@ -1,5 +1,5 @@
 function portfolioFactory(data) {
-    const { name, portrait,city, country, tagline, price,id} = data;
+    const { name, portrait,title, country, tagline, price,id} = data;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -14,9 +14,9 @@ function portfolioFactory(data) {
                 </a>
                 <div class="photographer__info">
                     <h2>${data.name}</h2>
-                    <h3 class="photographer__info__localisation">${data.city}, ${data.country}</h3>
-                    <p class="photographer__info__tagline">${data.tagline}</p>
-                    <p class="photographer__info__price">${data.price}€/jour</p>
+                    <h3 class="photographer__info__localisation">${data.title}, ${data.title}</h3>
+                    <p class="photographer__info__tagline">${data.likes}</p>
+                    <p class="photographer__info__price">${data.likes}€/jour</p>
                 </div>
                 </article>
             `
