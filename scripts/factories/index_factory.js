@@ -8,15 +8,17 @@ function photographerFactory(data) {
         link.innerHTML = `
             <article class ="photographer__card">
                 <a href="photographer.html?id=${data.id}"> 
-                    <img class="photographer__portrait" src="${picture}">
+                    <div class="photographer__portrait">
+                        <img src="${picture}">
+                    </div>
+                    <h2 class="photographer__name">${data.name}</h2>
                 </a>
                 <div class="photographer__info">
-                    <h2>${data.name}</h2>
                     <h3 class="photographer__info__localisation">${data.city}, ${data.country}</h3>
                     <p class="photographer__info__tagline">${data.tagline}</p>
                     <p class="photographer__info__price">${data.price}€/jour</p>
                 </div>
-                </article>        
+            </article>        
         `
         return (link)
     }

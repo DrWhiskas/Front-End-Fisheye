@@ -1,11 +1,14 @@
 @import url("photographer.css");
 @import url("portfolio.css");
+@import url("photographer_card.css");
 
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
 }
-
+a {
+    text-decoration: none;
+}
 
 header {
     display: flex;
@@ -46,8 +49,9 @@ h1 {
 }
 
 .photographer_section article img {
-    height: 200px;
+   /* height: 200px;
     width: 200px;
+    */
 }
 
 .oui{

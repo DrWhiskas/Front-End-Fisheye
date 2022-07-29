@@ -1,0 +1,17 @@
+.photographer__portrait{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;   
+}
+.photographer__portrait img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.photographer__info{
+    text-align: center;
+}
+.photographer__name{
+    margin: 8px;
+}
