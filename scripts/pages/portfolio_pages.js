@@ -1,7 +1,4 @@
-
-   
-   
-   async function getNewMedia(){
+  function getNewMedia(){
         //fetch
         let myRequest = new Request("../data/photographers.json");
             fetch(myRequest)
@@ -29,6 +26,7 @@
                 console.log(data);
             });
     }
+
      getNewMedia()
 
     async function displayData(media) {
@@ -40,3 +38,4 @@
                 mediaSection.appendChild(userPictureDOM);
 
         };
+
