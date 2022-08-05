@@ -135,9 +135,6 @@ function photographerFactory(data) {
 
 */
 
-
-
-
 /*
 function portfolioFactory(oui) {
     const { portrait,title, date, price,likes,photographerId,image} = oui;
@@ -176,7 +173,7 @@ console.log("uwu",data.photographers)
 
 */
 
-  /*  async function getPhotographers() {
+/*  async function getPhotographers() {
         // Penser à remplacer par les données récupérées dans le json
         let myRequest = new Request("../data/photographers.json");
             fetch(myRequest)
@@ -204,28 +201,27 @@ console.log("uwu",data.photographers)
 
     }*/
 
+function photographFa(data2) {
+  const { name, portrait, id, tagline, city, country } = data2;
+  const userPicure = `assets/photographers/${portrait}`;
 
-
-function photographFa(data2){
-    const {name, portrait,id, tagline,city, country} = data2;
-    const userPicure = `assets/photographers/${portrait}`;
+  function getContact() {
+    const link = document.createElement("section");
+    link.innerHTML = `
+    <div class="contact">
+        <div class="contact__information">
+            <h2 class="contact__information__name">${data2.name}</h2>
+            <h3 class="contact__information__city">${data2.city},${data2.country}</h3>
+            <p class="contact__information__tag">${data2.tagline}</p>
+        </div>
+        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class="contact__picture">
+            <img src="${portrait}>
+    </div>
     
-    function getContact(){
-        const link = document.createElement('a');
-        link.innerHTML = `
-            <article class ="photographer__card">
-                <a href="photographer.html?id=${data2.id}"> 
-                    <div class="photographer__portrait">
-                    </div>
-                    <h2 class="photographer__name">${data2.name}</h2>
-                </a>
-                <div class="photographer__info">
-                    <h3 class="photographer__info__localisation">${data2.city}, ${data2.country}</h3>
-                    <p class="photographer__info__tagline">${data2.tagline}</p>
-                </div>
-            </article>        
-        `
-        return (link)
-    }
-    return {getContact }
-    }
+
+        `;
+    return link;
+  }
+  return { getContact };
+}
