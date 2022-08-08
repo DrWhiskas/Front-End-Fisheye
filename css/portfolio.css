@@ -26,7 +26,7 @@
 .portfolio__info{
     display: flex;
     justify-content: space-between;
-    color:#D3573C ;
+    color:#901C1C ;
 }
 .likes{
     display: flex;
@@ -39,17 +39,6 @@
 .like__heart{
     display: flex;
 }
-.standard{
-    display: block;
-    display: flex;
-}
-.actif{
-    display: none;
-    color: red;
-}
-.standard:hover{
-    display: none;
-}
-.standard:hover .actif{
-    display: block;
+.photograph_likes{
+    background: red;
 }
