@@ -7,7 +7,8 @@ function getNewMedia() {
       const queryString = window.location.search;
       const urlParam = new URLSearchParams(queryString);
       const photographerId = urlParam.get("id");
-      let i = 0;
+      let likeTotal = 0;
+      
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           displayData(media); // affiche les photos         
@@ -30,23 +31,23 @@ function getNewMedia() {
          console.log(likeTotal)
        }
       }))
-      media.forEach((media =>{
+      data.media.forEach((media =>{
         if(media.photographerId == photographerId){
-          let ouioui = media.likesCount();
-          
-          console.log(ouioui)
+          likeTotal += media.likes;
+          console.log(likeTotal);
+          return likeTotal
         }
       }))
+      document.getElementById("photograph_likes").innerHTML = `
+        <p> ${likeTotal} </p>
+      `;
 
     });
 }
 
 getNewMedia();
 
-function likesCount(){
-  let likesTotatal = 0;
-  return likesTotatal
-}
+
 
 async function displayData(media) {
   const mediaSection = document.querySelector(".photograph_portfolio");
@@ -54,6 +55,3 @@ async function displayData(media) {
   const userPictureDOM = portfolioPicture.getPhotographersPortfolio();
   mediaSection.appendChild(userPictureDOM);
 }
-
-// LIKES
-
