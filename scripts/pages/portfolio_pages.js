@@ -30,11 +30,23 @@ function getNewMedia() {
          console.log(likeTotal)
        }
       }))
+      media.forEach((media =>{
+        if(media.photographerId == photographerId){
+          let ouioui = media.likesCount();
+          
+          console.log(ouioui)
+        }
+      }))
 
     });
 }
 
 getNewMedia();
+
+function likesCount(){
+  let likesTotatal = 0;
+  return likesTotatal
+}
 
 async function displayData(media) {
   const mediaSection = document.querySelector(".photograph_portfolio");
@@ -45,9 +57,3 @@ async function displayData(media) {
 
 // LIKES
 
-async function displayLikes(media) {
-  const likesSection = document.querySelector(".photograph_likes");
-  const likesMultimedia = photographLikes(media);
-  const likeDOM = likesMultimedia.getLikes();
-  likesSection.appendChild(likeDOM);
-}

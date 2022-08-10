@@ -20,8 +20,6 @@ function portfolioFactory(media) {
                         </div>
                     </div>
             </div>
-            
-
             `;
     return link;
   }
@@ -41,6 +39,13 @@ let likeTotal = 0;
 
 function photographLikes(media) {
   const { price, likes, photographerId } = media;
+  function getA(){
+    let a = 0;
+    return a  
+   }
+   let toto= getA();
+   console.log(toto,"oooo")
+
   function getLikes() {
     likeTotal += media.likes;
 
@@ -53,7 +58,6 @@ function photographLikes(media) {
                 </div>
                 <div class="like-box__price">
                     <p>${likeTotal}</p>
-                    
             </div>
             `;
     return link;
