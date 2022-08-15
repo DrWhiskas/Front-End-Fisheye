@@ -30,19 +30,18 @@ function getNewMedia() {
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           likeTotal += media.likes;
-          likeTotal += n
+          likeTotal += n;
           console.log(likeTotal);
           return likeTotal;
         }
       });
-
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
           <p> ${likeTotal} <i class="fa-solid fa-heart "></i></p>
           <p> ${pricePhotograph}€ /jour</p>
           </div>
       `;
-
+      oui();
     });
 }
 
@@ -57,7 +56,7 @@ async function displayData(media) {
 
 let n = 0;
 function incrementLikesValue(n) {
-  n += 1
+  n += 1;
   console.log(n);
-  return n
+  return n;
 }

@@ -5,4 +5,5 @@ function oui() {
       console.log(e.target);
     });
   });
+  console.log("oui");
 }

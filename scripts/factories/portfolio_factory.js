@@ -10,7 +10,7 @@ function portfolioFactory(media) {
     link.innerHTML = `
             <div class ="portfolio">
                 <a href="#" class ="portfolio__link">
-                    <img class = "portfolio__image" src="${picture}" onclick =" oui()">
+                    <img class = "portfolio__image" src="${picture}">
                 </a>
                 <div class="portfolio__info">
                     <h2>${media.title}</h2>
