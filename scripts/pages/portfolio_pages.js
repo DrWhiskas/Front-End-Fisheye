@@ -8,38 +8,39 @@ function getNewMedia() {
       const urlParam = new URLSearchParams(queryString);
       const photographerId = urlParam.get("id");
       let likeTotal = 0;
-      
+      let pricePhotograph = 0;
+
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
-          displayData(media); // affiche les photos         
-          //displayLikes(media); // affiche le nombre de like total
+          displayData(media); // affiche les photos
         }
-       /* if (media.photographerId !== photographerId) {
-          console.log("sad");
-        } else {
-          console.log("ERROR");
-        }*/
       });
       data.photographers.forEach((photographers) => {
         if (photographers.id == photographerId) {
           displayPhotographer(photographers);
+          pricePhotograph += photographers.price;
+          return pricePhotograph;
         }
-
       });
-      data.media.forEach((media => {
-       if(media.photographerId == photographerId){
-         console.log(likeTotal)
-       }
-      }))
-      data.media.forEach((media =>{
-        if(media.photographerId == photographerId){
-          likeTotal += media.likes;
+      data.media.forEach((media) => {
+        if (media.photographerId == photographerId) {
           console.log(likeTotal);
-          return likeTotal
         }
-      }))
+      });
+      data.media.forEach((media) => {
+        if (media.photographerId == photographerId) {
+          likeTotal += media.likes;
+          likeTotal += n
+          console.log(likeTotal);
+          return likeTotal;
+        }
+      });
+
       document.getElementById("photograph_likes").innerHTML = `
-        <p> ${likeTotal} </p>
+        <div class = "photograph_likes-content"">
+          <p> ${likeTotal} <i class="fa-solid fa-heart "></i></p>
+          <p> ${pricePhotograph}€ /jour</p>
+          </div>
       `;
 
     });
@@ -47,11 +48,16 @@ function getNewMedia() {
 
 getNewMedia();
 
-
-
 async function displayData(media) {
   const mediaSection = document.querySelector(".photograph_portfolio");
   const portfolioPicture = portfolioFactory(media);
   const userPictureDOM = portfolioPicture.getPhotographersPortfolio();
   mediaSection.appendChild(userPictureDOM);
+}
+
+let n = 0;
+function incrementLikesValue(n) {
+  n += 1
+  console.log(n);
+  return n
 }

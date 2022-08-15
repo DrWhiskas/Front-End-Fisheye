@@ -1,35 +1,28 @@
-    async function getPhotographers() {
-        // Penser à remplacer par les données récupérées dans le json
-        let myRequest = new Request("../data/photographers.json");
-            fetch(myRequest)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                 displayData(data.photographers);
-            });
+async function getPhotographers() {
+  // Penser à remplacer par les données récupérées dans le json
+  let myRequest = new Request("../data/photographers.json");
+  fetch(myRequest)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      displayData(data.photographers);
+    });
+}
 
-        // et bien retourner le tableau photographers seulement une fois
+async function displayData(photographers) {
+  const photographersSection = document.querySelector(".photographer_section");
 
-    }
+  photographers.forEach((photographer) => {
+    const photographerModel = photographerFactory(photographer);
+    const userCardDOM = photographerModel.getUserCardDOM();
+    photographersSection.appendChild(userCardDOM);
+  });
+}
 
-     async function displayData(photographers) {
-        const photographersSection = document.querySelector(".photographer_section");
+async function init() {
+  // Récupère les datas des photographes
+  const { photographers } = await getPhotographers();
+  displayData(photographers);
+}
 
-        photographers.forEach((photographer) => {
-            const photographerModel = photographerFactory(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
-        });
-    };
-
-     async function init() {
-        // Récupère les datas des photographes
-        const { photographers } = await getPhotographers();
-        displayData(photographers);
-    };
-    
-    init();
-
-    
-
-    //export function getPhotographers();
+init();

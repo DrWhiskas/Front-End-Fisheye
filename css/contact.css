@@ -1,18 +1,7 @@
-/*.modal{
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #232323;
-    color: white;
-    text-align: center;
-}*/
-.contact{
-    display: flex;
-    justify-content: space-around;
+.contact {
+  display: flex;
+  justify-content: space-around;
 }
-.contact__information{
-    align-self: center;
+.contact__information {
+  align-self: center;
 }
