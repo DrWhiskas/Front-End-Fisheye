@@ -1,16 +1,21 @@
 function oui() {
-  const ouii = document.querySelectorAll(".portfolio__image");
-  ouii.forEach((mediaPic) => {
-    mediaPic.addEventListener("click", (e) => {
-        const ouin = document.createElement("div")
-        ouin.classList.add("targetPicture")
-        const siuuu = e.target;
-        const newxOui = document.createElement("img")
-        newxOui.setAttribute("src",siuuu)
-      console.log(e.target);
-      console.log(newxOui);
-
+  const lightbox = document.createElement("div");
+  lightbox.id = "lightbox";
+  document.body.appendChild(lightbox);
+  const image = document.querySelectorAll(".portfolio__image");
+  image.forEach((image) => {
+    image.addEventListener("click", (e) => {
+      lightbox.classList.add("active");
+      const img = document.createElement("img");
+      img.src = image.src;
+      while (lightbox.firstChild){
+        lightbox.removeChild(lightbox.firstChild)
+      }
+      lightbox.appendChild(img);
     });
   });
-  console.log("oui");
+  lightbox.addEventListener('click', e => {
+    if(e.target !== e.currentTarget) return
+    lightbox.classList.remove('active')
+  })
 }

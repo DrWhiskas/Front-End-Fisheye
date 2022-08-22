@@ -2,11 +2,12 @@
 @import url("portfolio.css");
 @import url("photographer_card.css");
 @import url("contact.css");
+@import url("lightbox.css");
 
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
-  padding: 0px 20px;
+  /*padding: 0px 20px;*/
 }
 a {
   text-decoration: none;
@@ -50,12 +51,27 @@ h1 {
   font-size: 36px;
 }
 
-.photographer_section article img {
-  /* height: 200px;
-    width: 200px;
-    */
-}
+/** BREAKPOINT **/
 
-.oui {
-  color: blue;
+/*@media screen and (max-width: 992px) {
+  .photographer_section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}*/
+
+/*@media screen and (max-width: 992px) {
+  .photographer_section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+*/
+@media only screen and (max-width: 992px ) {
+  .photographer_section {
+    display: flex;
+    justify-content: space-around;
+  }
 }

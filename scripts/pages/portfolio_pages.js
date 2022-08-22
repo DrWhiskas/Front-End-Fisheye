@@ -30,18 +30,21 @@ function getNewMedia() {
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           likeTotal += media.likes;
-          likeTotal += n;
+          incrementValues(likeTotal);
           console.log(likeTotal);
-          return likeTotal;
         }
       });
+      oui()
+
+            //likeTotal+=P
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
-          <p> ${likeTotal} <i class="fa-solid fa-heart "></i></p>
+          <p value="${likeTotal}" id="pls" onclick="sah()"> ${likeTotal} <i class="fa-solid fa-heart"></i></p>
           <p> ${pricePhotograph}€ /jour</p>
           </div>
       `;
-      oui();
+
+
     });
 }
 
@@ -52,11 +55,4 @@ async function displayData(media) {
   const portfolioPicture = portfolioFactory(media);
   const userPictureDOM = portfolioPicture.getPhotographersPortfolio();
   mediaSection.appendChild(userPictureDOM);
-}
-
-let n = 0;
-function incrementLikesValue(n) {
-  n += 1;
-  console.log(n);
-  return n;
 }
