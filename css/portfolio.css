@@ -28,7 +28,13 @@
   display: flex;
   justify-content: space-between;
   color: #901c1c;
+  margin-top: -30%;
 }
+.portfolio__info h2 {
+  margin: 0;
+  padding : 0;
+}
+
 .likes {
   display: flex;
   text-align: center;

@@ -8,14 +8,20 @@ function oui() {
       lightbox.classList.add("active");
       const img = document.createElement("img");
       img.src = image.src;
-      while (lightbox.firstChild){
-        lightbox.removeChild(lightbox.firstChild)
-      }
+      lightbox.innerHTML = ``;
       lightbox.appendChild(img);
+      console.log(lighbox.nextElementSibling);
     });
   });
-  lightbox.addEventListener('click', e => {
-    if(e.target !== e.currentTarget) return
-    lightbox.classList.remove('active')
-  })
+  lightbox.addEventListener("click", (e) => {
+    if (e.target !== e.currentTarget) return;
+    lightbox.classList.remove("active");
+  });
+  previous();
+}
+function previous() {
+  const prev = document.getElementById("prev")
+  prev.addEventListener("click", (e)=> {
+    
+  })  
 }
