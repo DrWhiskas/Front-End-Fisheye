@@ -30,14 +30,12 @@ function getNewMedia() {
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           likeTotal += media.likes;
-          incrementValues(likeTotal);
+          //incrementValues(likeTotal);
           console.log(likeTotal);
         }
       });
-      oui();
-      //returnIndex();
+      lightbox()
 
-      //likeTotal+=P
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
           <p value="${likeTotal}" id="pls" onclick="sah()"> ${likeTotal} <i class="fa-solid fa-heart"></i></p>
@@ -55,13 +53,3 @@ async function displayData(media) {
   const userPictureDOM = portfolioPicture.getPhotographersPortfolio();
   mediaSection.appendChild(userPictureDOM);
 }
-
-/*function returnIndex() {
-
-  document
-  .getElementsByClassName(("logo")
-  .addEventListener("click", (e) => {
-    window.history.go(-1);
-  }))
-
-}*/
