@@ -1,4 +1,4 @@
-let p=0
+/*let p=0
 function incrementValues(P){
     p++
     p+=P
@@ -17,3 +17,4 @@ function sah(){
     document.getElementById("pls").value = i
 
 }
+*/

@@ -1,68 +1,48 @@
-/*#lightbox {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  display: none;
-}
-#lightbox.active{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#lightbox.active img{
-  height: 76%;
-}*/
-
-#lightbox{
+#lightbox {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100% ;
+  width: 100%;
   height: 100%;
   z-index: 10;
   background-color: white;
   display: none;
 }
 .lightbox__next,
-.lightbox__prev{
+.lightbox__prev {
   border: none;
   position: fixed;
   z-index: 11;
   top: 50%;
   cursor: pointer;
-
 }
-.lightbox__prev{
+.lightbox__prev {
   right: auto;
   left: 0;
-
 }
-.lightbox__next{
+.lightbox__next {
   left: auto;
   right: 0;
 }
-.lightbox__close{
+.lightbox__close {
   border: none;
   position: fixed;
   top: 20px;
   right: 10px;
   cursor: pointer;
 }
-.lightbox button{
+.lightbox button {
   background: transparent;
   z-index: 12;
 }
-#lightbox img{
+#lightbox img {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80%;
   max-width: 80%;
 }
-.lightbox__container{
+.lightbox__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,9 +50,8 @@
   margin-right: 50px;
   min-height: 100vh;
 }
-#lightbox.active{
+#lightbox.active {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }

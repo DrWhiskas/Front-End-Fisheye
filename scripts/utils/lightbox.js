@@ -90,13 +90,13 @@ img.forEach(img => img.addEventListener("click", (e) => {
 
 
 }*/
+
+/*
 let p = 0;
 function lightbox() {
   const images = document.querySelectorAll(".portfolio__image");
-
-  let arrayImage = Array.from(images);
-
-  const lightbox = document.createElement("div");
+  let arrayImage = Array.from(images); // convertisseur en tableau
+  const lightbox = document.createElement("section");
   lightbox.id = "lightbox";
   const gonext = document.getElementById("lightbox__next");
   document.body.appendChild(lightbox);
@@ -104,22 +104,51 @@ function lightbox() {
     image.addEventListener("click", (e) => {
       lightbox.classList.add("active");
       const img = document.createElement("img");
-      img.classList.add("lightbox__image")
+      img.classList.add("lightbox__image");
       console.log(images);
       p = arrayImage.indexOf(e.target);
-      console.log(p, "ml");
+
+      img.src = image.src;
+      lightbox.appendChild(lightboxContent, img);
+    });
+  });
+  gonext.addEventListener("click", (e) => {
+    p++;
+    let newArray = arrayImage[p].getAttribute("src");
+    console.log(newArray);
+    console.log(p);
+    const newLighboxImage = document.querySelector(".lightbox__image");
+    newLighboxImage.setAttribute("src", newArray);
+  });
+}
+*/
+
+let i = 0 // Variable pour l'incrementation de la lightbox
+
+function lightbox() {
+  const images = document.querySelectorAll(".portfolio__image"); // selection de tout les medias
+  let arrayImage = Array.from(images); // convertisseur en tableau
+  /* CREATION DE LA LIGHTBOX */
+  const lightbox = document.createElement("section"); // creationd de l'element lightbox
+  lightbox.id = "lightbox";
+  lightbox.innerHTML = `
+    <button class="lightbox__next" id="lightbox__next"><i class="fa-solid fa-angle-right fa-2x"></i></button>
+    <button class="lightbox__prev" id="lightbox__prev"><i class="fa-solid fa-angle-left fa-2x"></i></button>
+  `;
+  document.body.appendChild(lightbox);
+  // DOM Suivant et Précédent
+  images.forEach((image) => {
+    image.addEventListener("click", (e) => {
+      lightbox.classList.add("active");
+      const img = document.createElement("img");
+      img.classList.add("lightbox__image");
+      console.log(images);
+      //p = arrayImage.indexOf(e.target);
 
       img.src = image.src;
       lightbox.appendChild(img);
     });
   });
-  gonext.addEventListener("click", (e) => {
-    p++;
-    let newArray = arrayImage[p].getAttribute("src")
-    console.log(newArray);
-    console.log(p);
-    const newLighboxImage = document.querySelector(".lightbox__image");
-    newLighboxImage.setAttribute("src", newArray)
 
-  });
+  
 }
