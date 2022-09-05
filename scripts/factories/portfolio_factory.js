@@ -3,8 +3,6 @@ function portfolioFactory(media) {
     media;
   const picture = `assets/Sample Photos/${photographerId}/${image}`;
   const videos = `assets/Sample Photos/${photographerId}/${video}`;
-  const videosExtention = ["mp4"];
-  const extension = picture.split(".");
   function getPhotographersPortfolio() {
     const link = document.createElement("article");
     if (media.video) {

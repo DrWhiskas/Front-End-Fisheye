@@ -1,0 +1,10 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}

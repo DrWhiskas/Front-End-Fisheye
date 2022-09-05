@@ -8,13 +8,14 @@ function lightbox() {
   const lightboxContent = document.createElement("section");
   lightboxContent.id = "lightboxButton";
   lightboxContent.innerHTML = `
-      <button class="lightbox__close" id="lightbox__close"><i class="fa-solid fa-xmark fa-2x"></i></button>
-      <button class="lightbox__next" id="lightbox__next"><i class="fa-solid fa-angle-right fa-2x"></i></button>
-      <button class="lightbox__prev" id="lightbox__prev"><i class="fa-solid fa-angle-left fa-2x"></i></button>
+      <button class="lightbox__close" id="lightbox__close"><i class="fa-solid fa-xmark fa-4x"></i></button>
+      <button class="lightbox__next" id="lightbox__next"><i class="fa-solid fa-angle-right fa-4x"></i></button>
+      <button class="lightbox__prev" id="lightbox__prev"><i class="fa-solid fa-angle-left fa-4x"></i></button>
   `;
   document.body.appendChild(lightboxContent);
   const lightboxNext = document.getElementById("lightbox__next");
   const lightboxPrev = document.getElementById("lightbox__prev");
+  const lightboxClose = document.getElementById("lightbox__close");
   document.body.appendChild(lightbox);
   images.forEach((image) => {
     image.addEventListener("click", (e) => {
@@ -28,11 +29,14 @@ function lightbox() {
       console.log(e.target.src);
       if (e.target.src === "") {
         const video = document.createElement("video");
+        const source = document.createElement("source");
+        video.setAttribute("controls", "true")
+        source.src = image.firstElementChild.src
         video.classList.add("lightbox__image");
-        video.src = image.src;
-        lightbox.innerHTML=``;
-        lightbox.appendChild(video)
-      }else{
+        lightbox.innerHTML = ``;
+        lightbox.appendChild(video);
+        video.appendChild(source)
+      } else {
         img.src = image.src;
         lightbox.innerHTML = ``;
         lightbox.appendChild(img);
@@ -42,12 +46,15 @@ function lightbox() {
   // EVENEMENT IMAGE SUIVANTES
   lightboxNext.addEventListener("click", (e) => {
     p++;
+    lightbox.innerHTML=``;
+    if(arrayImage[p].nodeName == "img"){}
     let newArray = arrayImage[p].getAttribute("src");
     const newLighboxImage = document.querySelector(".lightbox__image");
     newLighboxImage.setAttribute("src", newArray);
-    if(p == images.length -1){
+    if (p == images.length - 1) {
       p = 0;
     }
+    
   });
 
   // EVENEMENT IMAGE PRECEDENTE
@@ -56,25 +63,30 @@ function lightbox() {
     let newArray = arrayImage[p].getAttribute("src");
     const newLighboxImage = document.querySelector(".lightbox__image");
     newLighboxImage.setAttribute("src", newArray);
-        if (p == 0) {
-          p = images.length;
-        }
+    if (p == 0) {
+      p = images.length;
+    }
   });
   // EVENEMENT FERMETURE DE LA LIGHTBOX
   lightbox.addEventListener("click", (e) => {
     if (e.target !== e.currentTarget) return;
     lightbox.classList.remove("active");
-    lightboxContent.classList.remove("active")
-
+    lightboxContent.classList.remove("active");
   });
+  // EVENT BOUTON DE FERMETURE
+  lightboxClose.addEventListener("click", (e) => {
+    lightbox.classList.remove("active");
+    lightboxContent.classList.remove("active");
+  });
+
   // KEYEVENT
-  /*document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", (e) => {
     const touchPress = e.key;
     console.log(touchPress, "uwu");
-    if(touchPress === "ArrowRight"){
-      p++
-      console.log(p);
+    if (touchPress === "ArrowRight") {
+      p++;
+      console.log(touchPress);
+      arrayImage[p++];
     }
-  })
-  */
+  });
 }
