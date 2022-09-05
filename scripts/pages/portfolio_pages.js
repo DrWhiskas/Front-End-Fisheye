@@ -34,7 +34,7 @@ function getNewMedia() {
           console.log(likeTotal);
         }
       });
-      lightbox()
+      lightbox();
 
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">

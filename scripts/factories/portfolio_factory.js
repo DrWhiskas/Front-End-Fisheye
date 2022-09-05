@@ -1,13 +1,30 @@
 function portfolioFactory(media) {
-  const { portrait, title, date, price, likes, photographerId, image } = media;
+  const { portrait, title, date, price, likes, photographerId, image, video } =
+    media;
   const picture = `assets/Sample Photos/${photographerId}/${image}`;
-  const video = `assets/Sample Photos/${photographerId}/${image}`;
-  let oui = 0;
-
-  console.log(picture);
+  const videos = `assets/Sample Photos/${photographerId}/${video}`;
+  const videosExtention = ["mp4"];
+  const extension = picture.split(".");
   function getPhotographersPortfolio() {
     const link = document.createElement("article");
-    link.innerHTML = `
+    if (media.video) {
+      link.innerHTML = `
+            <div class ="portfolio">
+                <div class ="portfolio__link">
+                   <video class="portfolio__image"><source src="${videos}"></source></video> 
+                </div>
+                <div class="portfolio__info">
+                    <h2>${media.title}</h2>
+                    <div class="likes">
+                        <h2>${media.likes}</h2>
+                        <div class="like__heart">
+                            <i class="fa-solid fa-heart fa-2x"></i>
+                        </div>
+                    </div>
+            </div>
+            `;
+    } else {
+      link.innerHTML = `
             <div class ="portfolio">
                 <div class ="portfolio__link">
                     <img class = "portfolio__image" src="${picture}">
@@ -22,6 +39,7 @@ function portfolioFactory(media) {
                     </div>
             </div>
             `;
+    }
 
     return link;
   }
@@ -34,7 +52,6 @@ function portfolioFactory(media) {
     title,
     portrait,
     picture,
+    video
   };
 }
-
-

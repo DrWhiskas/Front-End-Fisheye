@@ -55,3 +55,9 @@
   justify-content: center;
   align-items: center;
 }
+#lightboxButton{
+  display: none;
+}
+#lightboxButton.active{
+  display: flex;
+}
