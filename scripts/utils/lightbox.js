@@ -27,27 +27,28 @@ function lightbox() {
       img.classList.add("lightbox__image");
       p = arrayImage.indexOf(e.target);
       console.log(e.target.src);
-      if (e.target.src === "") {
-        const video = document.createElement("video");
+      //if (e.target.src === "") {
+        //const video = document.createElement("video");
         const source = document.createElement("source");
-        video.setAttribute("controls", "true")
-        source.src = image.firstElementChild.src
-        video.classList.add("lightbox__image");
+       // video.setAttribute("controls", "true")
+        //source.src = image.firstElementChild.src
+        //video.classList.add("lightbox__image");
         lightbox.innerHTML = ``;
-        lightbox.appendChild(video);
-        video.appendChild(source)
-      } else {
+        //lightbox.appendChild(video);
+        //video.appendChild(source)
+      //} else {
         img.src = image.src;
-        lightbox.innerHTML = ``;
+        //lightbox.innerHTML = ``;
         lightbox.appendChild(img);
-      }
+      //}
     });
   });
   // EVENEMENT IMAGE SUIVANTES
+  /*
   lightboxNext.addEventListener("click", (e) => {
     p++;
     lightbox.innerHTML=``;
-    if(arrayImage[p].nodeName == "img"){}
+    //if(arrayImage[p].nodeName == "img"){}
     let newArray = arrayImage[p].getAttribute("src");
     const newLighboxImage = document.querySelector(".lightbox__image");
     newLighboxImage.setAttribute("src", newArray);
@@ -56,7 +57,7 @@ function lightbox() {
     }
     
   });
-
+*/
   // EVENEMENT IMAGE PRECEDENTE
   lightboxPrev.addEventListener("click", (e) => {
     p--;
