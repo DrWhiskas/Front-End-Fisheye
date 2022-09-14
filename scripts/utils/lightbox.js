@@ -30,12 +30,12 @@ function lightbox() {
       if (e.target.src === "") {
         const video = document.createElement("video");
         const source = document.createElement("source");
-        video.setAttribute("controls", "true")
-        source.src = image.firstElementChild.src
-        video.classList.add("lightbox__image");
+        video.setAttribute("controls", "true");
+        source.src = image.firstElementChild.src;
+        video.classList.add("lightbox__video");
         lightbox.innerHTML = ``;
         lightbox.appendChild(video);
-        video.appendChild(source)
+        video.appendChild(source);
       } else {
         img.src = image.src;
         lightbox.innerHTML = ``;
@@ -44,21 +44,17 @@ function lightbox() {
     });
   });
   // EVENEMENT IMAGE SUIVANTES
-  
+
   lightboxNext.addEventListener("click", (e) => {
     p++;
     lightbox.innerHTML = ``;
     if (arrayImage[p].nodeName == "VIDEO") {
-      /*const newVideo = document.createElement("video")
-      const newSource = document.createElement("source")
-      newVideo.setAttribute("controls", "true")
-      newSource.src = image.firstElementChild.src;
-*/ const newVideo = document.createElement("video");
+      const newVideo = document.createElement("video");
       const newSource = document.createElement("source");
+      newVideo.classList.add("lightbox__video");
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);
       console.log(arrayImage[p]);
-      newSource.innerHTML = `lsdjfdjs`;
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
     } else {
@@ -69,36 +65,31 @@ function lightbox() {
       lightbox.appendChild(newImg);
       console.log(arrayImage[p].nodeName);
     }
-   
+
     if (p == images.length - 1) {
       p = 0;
     }
-    
   });
 
   // EVENEMENT IMAGE PRECEDENTE
   lightboxPrev.addEventListener("click", (e) => {
     p--;
-    lightbox.innerHTML=``
+    lightbox.innerHTML = ``;
     if (arrayImage[p].nodeName == "VIDEO") {
-      /*const newVideo = document.createElement("video")
-      const newSource = document.createElement("source")
-      newVideo.setAttribute("controls", "true")
-      newSource.src = image.firstElementChild.src;
-*/ const newVideo = document.createElement("video");
+      const newVideo = document.createElement("video");
       const newSource = document.createElement("source");
+      newVideo.classList.add("lightbox__video")
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);
       console.log(arrayImage[p]);
-      newSource.innerHTML = `lsdjfdjs`;
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
     } else {
-      const newImg = document.createElement("img")   
+      const newImg = document.createElement("img");
       let newArray = arrayImage[p].getAttribute("src");
-       newImg.setAttribute("src", newArray)
+      newImg.setAttribute("src", newArray);
       newImg.classList.add("lightbox__image");
-      lightbox.appendChild(newImg)
+      lightbox.appendChild(newImg);
       console.log(arrayImage[p].nodeName);
     }
     if (p == 0) {

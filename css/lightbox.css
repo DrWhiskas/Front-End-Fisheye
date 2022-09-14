@@ -36,7 +36,8 @@
   cursor: pointer;
   background-color: unset;
 }
-#lightbox img {
+.lightbox__image,
+.lightbox__video {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,4 +64,6 @@
   display: flex;
 }
 
+.lightbox__video{
 
+}
