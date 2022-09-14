@@ -15,7 +15,7 @@
 .photographer__name {
   margin: 8px;
 }
-.photographer__card{
+/*.photographer__card{
     @for $i from 1 through 13 {
       &:nth-child(#{$i}n) {
         animation-fill-mode: both;
@@ -23,4 +23,4 @@
       }
     }
     animation: apparition 0.9s;
-}
+}*/

@@ -15,6 +15,7 @@ function getNewMedia() {
           displayData(media); // affiche les photos
         }
       });
+
       data.photographers.forEach((photographers) => {
         if (photographers.id == photographerId) {
           displayPhotographer(photographers);
@@ -32,9 +33,11 @@ function getNewMedia() {
           likeTotal += media.likes;
           //incrementValues(likeTotal);
           console.log(likeTotal);
+
         }
       });
       lightbox();
+  
 
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
@@ -43,11 +46,13 @@ function getNewMedia() {
           </div>
       `;
     });
-}
+        
 
+
+}
 getNewMedia();
 
-async function displayData(media) {
+ function displayData(media) {
   const mediaSection = document.querySelector(".photograph_portfolio");
   const portfolioPicture = portfolioFactory(media);
   const userPictureDOM = portfolioPicture.getPhotographersPortfolio();

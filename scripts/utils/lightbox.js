@@ -27,43 +27,80 @@ function lightbox() {
       img.classList.add("lightbox__image");
       p = arrayImage.indexOf(e.target);
       console.log(e.target.src);
-      //if (e.target.src === "") {
-        //const video = document.createElement("video");
+      if (e.target.src === "") {
+        const video = document.createElement("video");
         const source = document.createElement("source");
-       // video.setAttribute("controls", "true")
-        //source.src = image.firstElementChild.src
-        //video.classList.add("lightbox__image");
+        video.setAttribute("controls", "true")
+        source.src = image.firstElementChild.src
+        video.classList.add("lightbox__image");
         lightbox.innerHTML = ``;
-        //lightbox.appendChild(video);
-        //video.appendChild(source)
-      //} else {
+        lightbox.appendChild(video);
+        video.appendChild(source)
+      } else {
         img.src = image.src;
-        //lightbox.innerHTML = ``;
+        lightbox.innerHTML = ``;
         lightbox.appendChild(img);
-      //}
+      }
     });
   });
   // EVENEMENT IMAGE SUIVANTES
-  /*
+  
   lightboxNext.addEventListener("click", (e) => {
     p++;
-    lightbox.innerHTML=``;
-    //if(arrayImage[p].nodeName == "img"){}
-    let newArray = arrayImage[p].getAttribute("src");
-    const newLighboxImage = document.querySelector(".lightbox__image");
-    newLighboxImage.setAttribute("src", newArray);
+    lightbox.innerHTML = ``;
+    if (arrayImage[p].nodeName == "VIDEO") {
+      /*const newVideo = document.createElement("video")
+      const newSource = document.createElement("source")
+      newVideo.setAttribute("controls", "true")
+      newSource.src = image.firstElementChild.src;
+*/ const newVideo = document.createElement("video");
+      const newSource = document.createElement("source");
+      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
+      newSource.setAttribute("src", mediaSource);
+      console.log(arrayImage[p]);
+      newSource.innerHTML = `lsdjfdjs`;
+      lightbox.appendChild(newVideo);
+      newVideo.appendChild(newSource);
+    } else {
+      const newImg = document.createElement("img");
+      let newArray = arrayImage[p].getAttribute("src");
+      newImg.setAttribute("src", newArray);
+      newImg.classList.add("lightbox__image");
+      lightbox.appendChild(newImg);
+      console.log(arrayImage[p].nodeName);
+    }
+   
     if (p == images.length - 1) {
       p = 0;
     }
     
   });
-*/
+
   // EVENEMENT IMAGE PRECEDENTE
   lightboxPrev.addEventListener("click", (e) => {
     p--;
-    let newArray = arrayImage[p].getAttribute("src");
-    const newLighboxImage = document.querySelector(".lightbox__image");
-    newLighboxImage.setAttribute("src", newArray);
+    lightbox.innerHTML=``
+    if (arrayImage[p].nodeName == "VIDEO") {
+      /*const newVideo = document.createElement("video")
+      const newSource = document.createElement("source")
+      newVideo.setAttribute("controls", "true")
+      newSource.src = image.firstElementChild.src;
+*/ const newVideo = document.createElement("video");
+      const newSource = document.createElement("source");
+      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
+      newSource.setAttribute("src", mediaSource);
+      console.log(arrayImage[p]);
+      newSource.innerHTML = `lsdjfdjs`;
+      lightbox.appendChild(newVideo);
+      newVideo.appendChild(newSource);
+    } else {
+      const newImg = document.createElement("img")   
+      let newArray = arrayImage[p].getAttribute("src");
+       newImg.setAttribute("src", newArray)
+      newImg.classList.add("lightbox__image");
+      lightbox.appendChild(newImg)
+      console.log(arrayImage[p].nodeName);
+    }
     if (p == 0) {
       p = images.length;
     }
@@ -83,7 +120,7 @@ function lightbox() {
   // KEYEVENT
   document.addEventListener("keydown", (e) => {
     const touchPress = e.key;
-    console.log(touchPress, "uwu");
+    console.log(touchPress);
     if (touchPress === "ArrowRight") {
       p++;
       console.log(touchPress);

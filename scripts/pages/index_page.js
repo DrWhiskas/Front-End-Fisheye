@@ -1,4 +1,4 @@
-async function getPhotographers() {
+function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
   let myRequest = new Request("../data/photographers.json");
   fetch(myRequest)
@@ -9,7 +9,7 @@ async function getPhotographers() {
     });
 }
 
-async function displayData(photographers) {
+function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
 
   photographers.forEach((photographer) => {

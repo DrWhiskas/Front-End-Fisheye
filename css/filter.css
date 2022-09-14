@@ -1,0 +1,21 @@
+#filter{
+    width: 100%;
+}
+label{
+    font-size: 18px;
+    font-weight: bolder;
+}
+select,
+option{
+    background-color: #901C1C;
+    color: white;
+    padding: 11px;
+    height: 70px;
+    width: 170px;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
