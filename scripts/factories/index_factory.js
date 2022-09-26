@@ -9,7 +9,7 @@ function photographerFactory(data) {
             <article class ="photographer__card">
                 <a href="photographer.html?id=${data.id}"> 
                     <div class="photographer__portrait">
-                        <img src="${picture}">
+                        <img src="${picture}" alt="${data.name}">
                     </div>
                     <h2 class="photographer__name">${data.name}</h2>
                 </a>

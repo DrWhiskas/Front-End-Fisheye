@@ -22,16 +22,16 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
     </header>
     <main id="main">
       <div class="photograph-header"></div>
       <section id="filter">
         <label for="filter-photo"> Trier par : </label>
         <select name="filter-photo" id="filter-photo" aria-label="Dérouler">
-          <option value="popularity">Popularité</option>
-          <option value="date">Date</option>
-          <option value="title">Titre</option>
+          <option class="filter-option" value="popularity">Popularité</option>
+          <option class="filter-option" value="date">Date</option>
+          <option class="filter-option" value="title">Titre</option>
         </select>
       </section>
       <div class="photograph_portfolio"></div>
@@ -45,6 +45,7 @@
             src="assets/icons/close.svg"
             class="close"
             onclick="closeModal()"
+            aria
           />
         </header>
         <form>

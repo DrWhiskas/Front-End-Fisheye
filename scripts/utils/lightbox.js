@@ -8,9 +8,9 @@ function lightbox() {
   const lightboxContent = document.createElement("section");
   lightboxContent.id = "lightboxButton";
   lightboxContent.innerHTML = `
-      <button class="lightbox__close" id="lightbox__close"><i class="fa-solid fa-xmark fa-4x"></i></button>
-      <button class="lightbox__next" id="lightbox__next"><i class="fa-solid fa-angle-right fa-4x"></i></button>
-      <button class="lightbox__prev" id="lightbox__prev"><i class="fa-solid fa-angle-left fa-4x"></i></button>
+      <button class="lightbox__close" id="lightbox__close"><i class="fa-solid fa-xmark fa-4x" aria-pressed="Close dialog"></i></button>
+      <button class="lightbox__next" id="lightbox__next"><i class="fa-solid fa-angle-right fa-4x" aria-pressed="Next image"></i></button>
+      <button class="lightbox__prev" id="lightbox__prev"><i class="fa-solid fa-angle-left fa-4x" aria-pressed="Previous image"></i></button>
   `;
   document.body.appendChild(lightboxContent);
   const lightboxNext = document.getElementById("lightbox__next");
@@ -54,7 +54,10 @@ function lightbox() {
       newVideo.classList.add("lightbox__video");
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);
-      console.log(arrayImage[p]);
+      // splt pour l'alt de la video
+      const splitSource = arrayImage[p].src.split("/");
+      const sourcePath = splitSource[splitSource.length - 1];
+      newSource.setAttribute("alt", sourcePath);
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
     } else {
@@ -62,8 +65,11 @@ function lightbox() {
       let newArray = arrayImage[p].getAttribute("src");
       newImg.setAttribute("src", newArray);
       newImg.classList.add("lightbox__image");
+      // splt pour l'alt de l'image
+      const splitSource = arrayImage[p].src.split("/");
+      const sourcePath = splitSource[splitSource.length - 1];
+      newImg.setAttribute("alt", sourcePath);
       lightbox.appendChild(newImg);
-      console.log(arrayImage[p].nodeName);
     }
 
     if (p == images.length - 1) {
@@ -78,7 +84,7 @@ function lightbox() {
     if (arrayImage[p].nodeName == "VIDEO") {
       const newVideo = document.createElement("video");
       const newSource = document.createElement("source");
-      newVideo.classList.add("lightbox__video")
+      newVideo.classList.add("lightbox__video");
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);
       console.log(arrayImage[p]);
@@ -108,7 +114,6 @@ function lightbox() {
     lightboxContent.classList.remove("active");
   });
 
-  // KEYEVENT
   document.addEventListener("keydown", (e) => {
     const touchPress = e.key;
     console.log(touchPress);

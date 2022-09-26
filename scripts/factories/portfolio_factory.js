@@ -3,6 +3,18 @@ function portfolioFactory(media) {
     media;
   const picture = `assets/Sample Photos/${photographerId}/${image}`;
   let like = media.likes;
+
+
+/*
+  const arrayDate = Array.from(media.date)
+  let resultat= []
+  for(let i in media){
+    resultat.push([i, media[i]])
+  }
+  console.log(resultat,"gazo");
+  console.log(arrayDate);
+*/
+
   const videos = `assets/Sample Photos/${photographerId}/${video}`;
 
   function getPhotographersPortfolio() {
@@ -11,14 +23,14 @@ function portfolioFactory(media) {
       link.innerHTML = `
             <div class ="portfolio">
                 <div class ="portfolio__link">
-                   <video class="portfolio__image"><source src="${videos}"></source></video> 
+                   <video class="portfolio__image"><source src="${videos}" alt="${media.title}"></source></video> 
                 </div>
                 <div class="portfolio__info">
                     <h2>${media.title}</h2>
                     <div class="likes">
                         <h2>${like}</h2>
                         <div class="like__heart">
-                            <i class="fa-solid fa-heart fa-2x"></i>
+                            <i class="fa-solid fa-heart fa-2x" aria-label="likes"></i>
                         </div>
                     </div>
             </div>
@@ -27,32 +39,32 @@ function portfolioFactory(media) {
       link.innerHTML = `
             <div class ="portfolio">
                 <div class ="portfolio__link">
-                    <img class = "portfolio__image" src="${picture}">
+                    <img class = "portfolio__image" src="${picture}"alt="${media.title}">
                 </div>
                 <div class="portfolio__info">
                     <h2>${media.title}</h2>
                     <div class="likes">
                         <h2 class="portfolio__likes">${like}</h2>
                         <div class="like__heart">
-                            <i class="fa-solid fa-heart fa-2x"></i>
+                            <i class="fa-solid fa-heart fa-2x" aria-label="likes"></i>
                         </div>
                     </div>
             </div>
             `;
     }
 
-   const godBless = link.querySelector(".like__heart");
-   console.log(godBless);
-     console.log("oui");
-     godBless.addEventListener("click", (e) => {
-     let newLike = e.target.closest("div").previousElementSibling;
-      const testLike = Number(newLike.innerText)+1;
+    const godBless = link.querySelector(".like__heart");
+    console.log(godBless);
+    console.log("oui");
+    godBless.addEventListener("click", (e) => {
+      let newLike = e.target.closest("div").previousElementSibling;
+      const testLike = Number(newLike.innerText) + 1;
       newLike.innerText = testLike;
-     });
-    //console.log(godBless);
+    });
+    console.log(like);
+
     return link;
   }
-
 
   return {
     media,

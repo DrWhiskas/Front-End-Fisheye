@@ -11,9 +11,9 @@ function photographFa(data2) {
             <h3 class="contact__information__city">${data2.city},${data2.country}</h3>
             <p class="contact__information__tag">${data2.tagline}</p>
         </div>
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button" onclick="displayModal()" aria-pressed="Contact me">Contactez-moi</button>
         <div class="contact__picture photographer__portrait">
-            <img src="${userPicure}">
+            <img src="${userPicure}" alt="${data2.name}">
     </div>
         `;
     return link;

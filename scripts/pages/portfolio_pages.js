@@ -33,11 +33,24 @@ function getNewMedia() {
           likeTotal += media.likes;
           //incrementValues(likeTotal);
           console.log(likeTotal);
-
         }
       });
       lightbox();
-  
+      const filterPhoto = document.querySelector("#filter-photo");
+      filterPhoto.addEventListener("change", (e) => {
+        const testT = e.target.value;
+        if (testT == "popularity") {
+          data.media.sort(function (a, b) {
+            return a.likes - b.likes;
+          });
+          console.log(data.media);
+        } else if (testT == "title") {
+          data.media.sort(function (c, d) {
+            return c.title - d.title;
+          });
+          console.log(data.media);
+        }
+      });
 
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
@@ -46,13 +59,10 @@ function getNewMedia() {
           </div>
       `;
     });
-        
-
-
 }
 getNewMedia();
 
- function displayData(media) {
+function displayData(media) {
   const mediaSection = document.querySelector(".photograph_portfolio");
   const portfolioPicture = portfolioFactory(media);
   const userPictureDOM = portfolioPicture.getPhotographersPortfolio();
