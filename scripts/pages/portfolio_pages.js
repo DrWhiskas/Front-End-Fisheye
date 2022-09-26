@@ -36,6 +36,8 @@ function getNewMedia() {
         }
       });
       lightbox();
+
+      // TRIER LES IMAGES
       const filterPhoto = document.querySelector("#filter-photo");
       filterPhoto.addEventListener("change", (e) => {
         const testT = e.target.value;
@@ -45,9 +47,18 @@ function getNewMedia() {
           });
           console.log(data.media);
         } else if (testT == "title") {
-          data.media.sort(function (c, d) {
-            return c.title - d.title;
+          // trier par titre
+          data.media.sort(function (a, b) {
+            if (a.title < b.title) {
+              return -1;
+            }
           });
+          console.log(data.media);
+        }
+        else if(testT == "date"){
+          data.media.sort((function (a,b){
+            return new Date(b.date) - new Date(a.date)
+          }))
           console.log(data.media);
         }
       });

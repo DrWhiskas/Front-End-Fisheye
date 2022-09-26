@@ -43,9 +43,27 @@ function lightbox() {
       }
     });
   });
-  // EVENEMENT IMAGE SUIVANTES
 
+  document.addEventListener("keydown", (e) => {
+    const touchPress = e.key;
+    console.log(touchPress);
+    if (touchPress == "ArrowLeft") {
+      lightboxPrevMedia();
+    } else if (touchPress == "ArrowRight") {
+      lightboxNextMedia();
+    } else if (touchPress == "Escape" || "Space") {
+      lightboxCloseMedia();
+    } else {
+      console.log("error");
+    }
+  });
+  // EVENEMENT IMAGE SUIVANTES
   lightboxNext.addEventListener("click", (e) => {
+    /*document.addEventListener("keydown", (e)=>{
+    const touchPress = e.key;
+      if (touchPress == "ArrowRight") {
+        console.log("oui");
+  }})*/
     p++;
     lightbox.innerHTML = ``;
     if (arrayImage[p].nodeName == "VIDEO") {
@@ -79,6 +97,12 @@ function lightbox() {
 
   // EVENEMENT IMAGE PRECEDENTE
   lightboxPrev.addEventListener("click", (e) => {
+    document.addEventListener("keydown", (e) => {
+      const touchPress = e.key;
+      if (touchPress == "ArrowLeft") {
+        console.log("oui");
+      }
+    });
     p--;
     lightbox.innerHTML = ``;
     if (arrayImage[p].nodeName == "VIDEO") {
@@ -114,13 +138,65 @@ function lightbox() {
     lightboxContent.classList.remove("active");
   });
 
-  document.addEventListener("keydown", (e) => {
-    const touchPress = e.key;
-    console.log(touchPress);
-    if (touchPress === "ArrowRight") {
-      p++;
-      console.log(touchPress);
-      arrayImage[p++];
+  function lightboxPrevMedia() {
+    p--;
+    lightbox.innerHTML = ``;
+    if (arrayImage[p].nodeName == "VIDEO") {
+      const newVideo = document.createElement("video");
+      const newSource = document.createElement("source");
+      newVideo.classList.add("lightbox__video");
+      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
+      newSource.setAttribute("src", mediaSource);
+      console.log(arrayImage[p]);
+      lightbox.appendChild(newVideo);
+      newVideo.appendChild(newSource);
+    } else {
+      const newImg = document.createElement("img");
+      let newArray = arrayImage[p].getAttribute("src");
+      newImg.setAttribute("src", newArray);
+      newImg.classList.add("lightbox__image");
+      lightbox.appendChild(newImg);
+      console.log(arrayImage[p].nodeName);
     }
-  });
+    if (p == 0) {
+      p = images.length;
+    }
+    console.log("gazo");
+  }
+  function lightboxNextMedia() {
+    p++;
+    lightbox.innerHTML = ``;
+    if (arrayImage[p].nodeName == "VIDEO") {
+      const newVideo = document.createElement("video");
+      const newSource = document.createElement("source");
+      newVideo.classList.add("lightbox__video");
+      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
+      newSource.setAttribute("src", mediaSource);
+      // splt pour l'alt de la video
+      const splitSource = arrayImage[p].src.split("/");
+      const sourcePath = splitSource[splitSource.length - 1];
+      newSource.setAttribute("alt", sourcePath);
+      lightbox.appendChild(newVideo);
+      newVideo.appendChild(newSource);
+    } else {
+      const newImg = document.createElement("img");
+      let newArray = arrayImage[p].getAttribute("src");
+      newImg.setAttribute("src", newArray);
+      newImg.classList.add("lightbox__image");
+      // splt pour l'alt de l'image
+      const splitSource = arrayImage[p].src.split("/");
+      const sourcePath = splitSource[splitSource.length - 1];
+      newImg.setAttribute("alt", sourcePath);
+      lightbox.appendChild(newImg);
+    }
+
+    if (p == images.length - 1) {
+      p = 0;
+    }
+  }
+  function lightboxCloseMedia() {
+    lightbox.classList.remove("active");
+    lightboxContent.classList.remove("active");
+  }
+  //document.addEventListener("keydown", lightboxNextMedia)
 }
