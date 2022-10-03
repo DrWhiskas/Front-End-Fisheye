@@ -28,7 +28,7 @@
       <div class="photograph-header"></div>
       <section id="filter">
         <label for="filter-photo"> Trier par : </label>
-        <select name="filter-photo" id="filter-photo" aria-label="Dérouler">
+        <select name="filter-photo" id="filter-photo" tabindex="2" aria-label="Dérouler">
           <option class="filter-option" value="popularity">Popularité</option>
           <option class="filter-option" value="date">Date</option>
           <option class="filter-option" value="title">Titre</option>
@@ -36,6 +36,13 @@
       </section>
       <div class="photograph_portfolio"></div>
       <aside id="photograph_likes"></aside>
+      <div id = "lightboxButton">
+        <div id="lightbox__next"><i class="fa-solid fa-angle-right fa-2x" tabindex="1"></i></div>
+        <div id="lightbox__prev"><i class="fa-solid fa-angle-left fa-2x" tabindex="1"></i></div>
+        <div id="lightbox__close"><i class="fa-solid fa-x fa-2x" tabindex="1"></i></div>
+      </div>
+      <section id="lightbox"></section>
+
     </main>
     <div id="contact_modal">
       <div class="modal">

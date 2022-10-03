@@ -8,8 +8,8 @@
   background-color: white;
   display: none;
 }
-.lightbox__next,
-.lightbox__prev {
+#lightbox__next,
+#lightbox__prev {
   border: none;
   position: fixed;
   z-index: 11;
@@ -18,15 +18,15 @@
   cursor: pointer;
   background-color: unset;
 }
-.lightbox__prev {
+#lightbox__prev {
   right: auto;
   left: 9%;
 }
-.lightbox__next {
+#lightbox__next {
   left: auto;
   right: 9%;
 }
-.lightbox__close {
+#lightbox__close {
   border: none;
   z-index: 11;
   position: fixed;
@@ -62,8 +62,4 @@
 }
 #lightboxButton.active {
   display: flex;
-}
-
-.lightbox__video{
-
 }

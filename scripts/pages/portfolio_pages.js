@@ -1,3 +1,4 @@
+
 function getNewMedia() {
   //fetch
   let myRequest = new Request("../data/photographers.json");
@@ -61,7 +62,17 @@ function getNewMedia() {
           }))
           console.log(data.media);
         }
+        const mediaList = document.querySelector(".photograph_portfolio");
+        mediaList.innerHTML =``
+        data.media.forEach((media)=>{
+               if (media.photographerId == photographerId) {
+                 displayData(media); // affiche les photos
+               }
+        })
+          lightbox();
       });
+
+
 
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
