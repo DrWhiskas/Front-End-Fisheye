@@ -1,5 +1,6 @@
-let eventListener = false 
-let eventListenerPrev = false
+let eventListener = false;
+let eventListenerPrev = false;
+let eventListenerKeyPrev = false;
 let p = 0;
 function lightbox() {
   const lightbox = document.getElementById("lightbox");
@@ -37,7 +38,7 @@ function lightbox() {
   });
 
   document.addEventListener("keydown", (e) => {
-    const touchPress = e.key;
+    const touchPress = e.key; 
     if (touchPress == "ArrowLeft") {
       lightboxPrevMedia();
     } else if (touchPress == "ArrowRight") {
@@ -49,13 +50,13 @@ function lightbox() {
     }
   });
   // EVENEMENT IMAGE SUIVANTES
-  if (eventListener != true){
-          console.log("toto");
-      eventListener = true
+  if (eventListener != true) {
+    console.log("toto");
+    eventListener = true;
 
     lightboxNext.addEventListener("click", (e) => {
       images = document.querySelectorAll(".portfolio__image");
-       arrayImage = Array.from(images); // convertisseur en tableau
+      arrayImage = Array.from(images); // convertisseur en tableau
       p++;
       if (p >= images.length) {
         p = 0;

@@ -28,8 +28,7 @@
 .photographer__card {
   display: flex;
   flex-direction: column;
-  width: 31%;
-  margin: 1%;
+  margin: 1% 6%;
 }
 .photographer__portrait {
   display: flex;

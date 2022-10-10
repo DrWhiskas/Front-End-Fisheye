@@ -4,5 +4,3 @@ async function displayPhotographer(photographers) {
   const contactDOM = contactPicture.getContact();
   contactSection.appendChild(contactDOM);
 }
-
-// modal
