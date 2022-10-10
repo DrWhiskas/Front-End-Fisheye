@@ -1,6 +1,6 @@
-let eventListener = false;
-let eventListenerPrev = false;
-let eventListenerKeyPrev = false;
+let eventListener = false 
+let eventListenerPrev = false
+let eventListenerKeyPrev = false
 let p = 0;
 function lightbox() {
   const lightbox = document.getElementById("lightbox");
@@ -38,7 +38,7 @@ function lightbox() {
   });
 
   document.addEventListener("keydown", (e) => {
-    const touchPress = e.key; 
+    const touchPress = e.key;
     if (touchPress == "ArrowLeft") {
       lightboxPrevMedia();
     } else if (touchPress == "ArrowRight") {
@@ -50,13 +50,13 @@ function lightbox() {
     }
   });
   // EVENEMENT IMAGE SUIVANTES
-  if (eventListener != true) {
-    console.log("toto");
-    eventListener = true;
+  if (eventListener != true){
+          console.log("toto");
+      eventListener = true
 
     lightboxNext.addEventListener("click", (e) => {
       images = document.querySelectorAll(".portfolio__image");
-      arrayImage = Array.from(images); // convertisseur en tableau
+       arrayImage = Array.from(images); // convertisseur en tableau
       p++;
       if (p >= images.length) {
         p = 0;
@@ -73,6 +73,10 @@ function lightbox() {
         const splitSource = arrayImage[p].src.split("/");
         const sourcePath = splitSource[splitSource.length - 1];
         newSource.setAttribute("alt", sourcePath);
+        const newTitle = document.createElement("div")
+         newTitle.className = "lightbox__title";
+        newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
+        lightbox.appendChild(newTitle);
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
       } else {
@@ -83,6 +87,10 @@ function lightbox() {
         const splitSource = arrayImage[p].src.split("/");
         const sourcePath = splitSource[splitSource.length - 1];
         newImg.setAttribute("alt", sourcePath);
+         const newTitle = document.createElement("div");
+         newTitle.className= "lightbox__title"
+         newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
+         lightbox.appendChild(newTitle);
         lightbox.appendChild(newImg);
       }
     });
@@ -105,13 +113,29 @@ function lightbox() {
         newVideo.classList.add("lightbox__video");
         let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
         newSource.setAttribute("src", mediaSource);
+         const splitSource = arrayImage[p].src.split("/");
+         const sourcePath = splitSource[splitSource.length - 1];
+         newSource.setAttribute("alt", sourcePath);
+         const newTitle = document.createElement("div");
+         newTitle.className = "lightbox__title";
+         newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
+         lightbox.appendChild(newTitle);
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
       } else {
+                const newSource = document.createElement("source");
+
         const newImg = document.createElement("img");
         let newArray = arrayImage[p].getAttribute("src");
         newImg.setAttribute("src", newArray);
         newImg.classList.add("lightbox__image");
+        const splitSource = arrayImage[p].src.split("/");
+        const sourcePath = splitSource[splitSource.length - 1];
+        newSource.setAttribute("alt", sourcePath);
+        const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
+        lightbox.appendChild(newTitle);
         lightbox.appendChild(newImg);
       }
       if (p == 0) {

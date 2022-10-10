@@ -63,3 +63,7 @@
 #lightboxButton.active {
   display: flex;
 }
+.lightbox__title{
+  position: absolute;
+  bottom: 2%;
+}
