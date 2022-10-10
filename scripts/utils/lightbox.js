@@ -1,4 +1,5 @@
 let eventListener = false 
+let eventListenerPrev = false
 let p = 0;
 function lightbox() {
   const lightbox = document.getElementById("lightbox");
@@ -86,36 +87,37 @@ function lightbox() {
     });
   }
 
+  console.log(lightboxPrev);
   // EVENEMENT IMAGE PRECEDENTE
-  lightboxPrev.addEventListener("click", (e) => {
-    /*document.addEventListener("keydown", (e) => {
-      const touchPress = e.key;
-      if (touchPress == "ArrowLeft") {
+  if (eventListenerPrev != true) {
+    console.log("toto");
+    eventListenerPrev = true;
+
+    lightboxPrev.addEventListener("click", (e) => {
+      images = document.querySelectorAll(".portfolio__image");
+      arrayImage = Array.from(images); // convertisseur en tableau
+      p--;
+      lightbox.innerHTML = ``;
+      if (arrayImage[p].nodeName == "VIDEO") {
+        const newVideo = document.createElement("video");
+        const newSource = document.createElement("source");
+        newVideo.classList.add("lightbox__video");
+        let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
+        newSource.setAttribute("src", mediaSource);
+        lightbox.appendChild(newVideo);
+        newVideo.appendChild(newSource);
+      } else {
+        const newImg = document.createElement("img");
+        let newArray = arrayImage[p].getAttribute("src");
+        newImg.setAttribute("src", newArray);
+        newImg.classList.add("lightbox__image");
+        lightbox.appendChild(newImg);
       }
-    });*/
-    p--;
-    lightbox.innerHTML = ``;
-    if (p < 0) {
-      p = images.length -1;
-    }
-        console.log(arrayImage[p]);
-        console.log(p);
-    if (arrayImage[p].nodeName == "VIDEO") {
-      const newVideo = document.createElement("video");
-      const newSource = document.createElement("source");
-      newVideo.classList.add("lightbox__video");
-      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
-      newSource.setAttribute("src", mediaSource);
-      lightbox.appendChild(newVideo);
-      newVideo.appendChild(newSource);
-    } else {
-      const newImg = document.createElement("img");
-      let newArray = arrayImage[p].getAttribute("src");
-      newImg.setAttribute("src", newArray);
-      newImg.classList.add("lightbox__image");
-      lightbox.appendChild(newImg);
-    }
-  });
+      if (p == 0) {
+        p = images.length;
+      }
+    });
+  }
   // EVENEMENT FERMETURE DE LA LIGHTBOX
   lightbox.addEventListener("click", (e) => {
     if (e.target !== e.currentTarget) return;

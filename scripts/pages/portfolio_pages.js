@@ -71,9 +71,6 @@ function getNewMedia() {
         })
           lightbox();
       });
-
-
-
       document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
           <p value="${likeTotal}" id="pls" onclick="sah()"> ${likeTotal} <i class="fa-solid fa-heart"></i></p>
@@ -83,7 +80,6 @@ function getNewMedia() {
     });
 }
 getNewMedia();
-
 function displayData(media) {
   const mediaSection = document.querySelector(".photograph_portfolio");
   const portfolioPicture = portfolioFactory(media);

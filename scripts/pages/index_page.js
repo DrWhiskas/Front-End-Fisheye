@@ -4,13 +4,12 @@ function getPhotographers() {
   fetch(myRequest)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       displayData(data.photographers);
     });
 }
 
 function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographer_section");
+  const photographersSection = document.querySelector(".photographer__container");
 
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);

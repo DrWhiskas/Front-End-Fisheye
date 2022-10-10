@@ -1,4 +1,4 @@
-.photographer__portrait {
+/*.photographer__portrait {
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -15,6 +15,7 @@
 .photographer__name {
   margin: 8px;
 }
+*/
 /*.photographer__card{
     @for $i from 1 through 13 {
       &:nth-child(#{$i}n) {
@@ -24,3 +25,56 @@
     }
     animation: apparition 0.9s;
 }*/
+.photographer__card {
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+  margin: 1%;
+}
+.photographer__portrait {
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+.photographer__portrait :hover {
+  transform: scale(1.1);
+}
+.photographer__portrait img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.photographer__info p {
+  margin: 1%;
+}
+.photographer__name,
+.photographer__info {
+  text-align: center;
+  font-weight: 400;
+
+}
+.photographer__name {
+  margin-bottom: 0;
+  color: #d3573c;
+  font-size: 36px;
+  line-height: 47px;
+}
+
+.photographer__info__localisation {
+  color: #901c1c;
+ /* font-weight: 400;*/
+  font-size: 13px;
+  line-height: 17px;
+}
+.photographer__info__tagline {
+  /*font-weight: 400;*/
+  font-size: 10px;
+  line-height: 13px;
+}
+.photographer__info__price {
+  color: #757575;
+  /*font-weight: 400;*/
+  font-size: 9px;
+  line-height: 12px;
+}

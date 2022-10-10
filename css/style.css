@@ -1,13 +1,19 @@
+@import url("index.css");
 @import url("photographer.css");
 @import url("portfolio.css");
 @import url("photographer_card.css");
 @import url("contact.css");
 @import url("lightbox.css");
 @import url("filter.css");
+
+*::before::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
-  margin: 0;
-  padding: 0px 8%;
 }
 a {
   text-decoration: none;
@@ -30,7 +36,7 @@ h1 {
   height: 50px;
   margin-left: 100px;
 }
-
+/*
 .photographer_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -50,7 +56,7 @@ h1 {
   color: #d3573c;
   font-size: 36px;
 }
-
+*/
 /** BREAKPOINT **/
 
 /*@media screen and (max-width: 992px) {
@@ -69,9 +75,11 @@ h1 {
   }
 }
 */
+/*
 @media only screen and (max-width: 992px ) {
   .photographer_section {
     display: flex;
     justify-content: space-around;
   }
 }
+*/
