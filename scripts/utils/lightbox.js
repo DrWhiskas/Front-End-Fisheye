@@ -36,10 +36,13 @@ function lightbox() {
       }
     });
   });
-
+  if(eventListenerKeyPrev != true){
+    eventListenerKeyPrev = true
+    console.log("toto");
   document.addEventListener("keydown", (e) => {
     const touchPress = e.key;
     if (touchPress == "ArrowLeft") {
+      eventListenerKeyPrev = true;
       lightboxPrevMedia();
     } else if (touchPress == "ArrowRight") {
       lightboxNextMedia();
@@ -49,9 +52,9 @@ function lightbox() {
       console.log("error");
     }
   });
+}
   // EVENEMENT IMAGE SUIVANTES
   if (eventListener != true){
-          console.log("toto");
       eventListener = true
 
     lightboxNext.addEventListener("click", (e) => {
@@ -62,8 +65,7 @@ function lightbox() {
         p = 0;
       }
       lightbox.innerHTML = ``;
-      console.log(arrayImage);
-      console.log(p);
+
       if (arrayImage[p].nodeName == "VIDEO") {
         const newVideo = document.createElement("video");
         const newSource = document.createElement("source");
@@ -89,17 +91,16 @@ function lightbox() {
         newImg.setAttribute("alt", sourcePath);
          const newTitle = document.createElement("div");
          newTitle.className= "lightbox__title"
-         newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
          lightbox.appendChild(newTitle);
         lightbox.appendChild(newImg);
       }
     });
   }
 
-  console.log(lightboxPrev);
   // EVENEMENT IMAGE PRECEDENTE
   if (eventListenerPrev != true) {
-    console.log("toto");
     eventListenerPrev = true;
 
     lightboxPrev.addEventListener("click", (e) => {
@@ -156,6 +157,8 @@ function lightbox() {
   });
 
   function lightboxPrevMedia() {
+    images = document.querySelectorAll(".portfolio__image");
+    arrayImage = Array.from(images); // convertisseur en tableau
     p--;
     lightbox.innerHTML = ``;
     if (arrayImage[p].nodeName == "VIDEO") {
@@ -178,6 +181,8 @@ function lightbox() {
     }
   }
   function lightboxNextMedia() {
+    images = document.querySelectorAll(".portfolio__image");
+    arrayImage = Array.from(images); // convertisseur en tableau
     p++;
     lightbox.innerHTML = ``;
     if (p >= images.length) {
