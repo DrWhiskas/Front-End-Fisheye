@@ -42,14 +42,11 @@ function portfolioFactory(media) {
             `;
     }
     const godBless = link.querySelector(".like__heart");
-    console.log(godBless);
-    console.log("oui");
     godBless.addEventListener("click", (e) => {
       let newLike = e.target.closest("div").previousElementSibling;
       const testLike = Number(newLike.innerText) + 1;
       newLike.innerText = testLike;
     });
-    console.log(like);
 
     return link;
   }

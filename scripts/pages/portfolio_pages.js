@@ -26,14 +26,12 @@ function getNewMedia() {
       });
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
-          console.log(likeTotal);
         }
       });
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           likeTotal += media.likes;
           //incrementValues(likeTotal);
-          console.log(likeTotal);
         }
       });
       lightbox();
@@ -46,7 +44,6 @@ function getNewMedia() {
           data.media.sort(function (a, b) {
             return a.likes - b.likes;
           });
-          console.log(data.media);
         } else if (testT == "title") {
           // trier par titre
           data.media.sort(function (a, b) {
@@ -54,13 +51,11 @@ function getNewMedia() {
               return -1;
             }
           });
-          console.log(data.media);
         }
         else if(testT == "date"){
           data.media.sort((function (a,b){
             return new Date(b.date) - new Date(a.date)
           }))
-          console.log(data.media);
         }
         const mediaList = document.querySelector(".photograph_portfolio");
         mediaList.innerHTML =``

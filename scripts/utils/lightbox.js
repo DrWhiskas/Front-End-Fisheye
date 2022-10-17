@@ -38,7 +38,6 @@ function lightbox() {
   });
   if(eventListenerKeyPrev != true){
     eventListenerKeyPrev = true
-    console.log("toto");
   document.addEventListener("keydown", (e) => {
     const touchPress = e.key;
     if (touchPress == "ArrowLeft") {
@@ -102,7 +101,6 @@ function lightbox() {
   // EVENEMENT IMAGE PRECEDENTE
   if (eventListenerPrev != true) {
     eventListenerPrev = true;
-
     lightboxPrev.addEventListener("click", (e) => {
       images = document.querySelectorAll(".portfolio__image");
       arrayImage = Array.from(images); // convertisseur en tableau
@@ -120,12 +118,12 @@ function lightbox() {
          const newTitle = document.createElement("div");
          newTitle.className = "lightbox__title";
          newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
+         console.log(sourcePath);
          lightbox.appendChild(newTitle);
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
       } else {
-                const newSource = document.createElement("source");
-
+        const newSource = document.createElement("source");
         const newImg = document.createElement("img");
         let newArray = arrayImage[p].getAttribute("src");
         newImg.setAttribute("src", newArray);
