@@ -76,8 +76,9 @@ function lightbox() {
         newSource.setAttribute("alt", sourcePath);
         const newTitle = document.createElement("div")
          newTitle.className = "lightbox__title";
-        newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
-        lightbox.appendChild(newTitle);
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+         lightbox.appendChild(newTitle);
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
       } else {
@@ -117,8 +118,8 @@ function lightbox() {
          newSource.setAttribute("alt", sourcePath);
          const newTitle = document.createElement("div");
          newTitle.className = "lightbox__title";
-         newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
-         console.log(sourcePath);
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
          lightbox.appendChild(newTitle);
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
@@ -133,8 +134,9 @@ function lightbox() {
         newSource.setAttribute("alt", sourcePath);
         const newTitle = document.createElement("div");
         newTitle.className = "lightbox__title";
-        newTitle.innerHTML = `<h1>${sourcePath}</h1>`;
-        lightbox.appendChild(newTitle);
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+         lightbox.appendChild(newTitle);
         lightbox.appendChild(newImg);
       }
       if (p == 0) {
@@ -165,6 +167,11 @@ function lightbox() {
       newVideo.classList.add("lightbox__video");
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);
+       const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+         lightbox.appendChild(newTitle);
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
     } else {
@@ -172,6 +179,11 @@ function lightbox() {
       let newArray = arrayImage[p].getAttribute("src");
       newImg.setAttribute("src", newArray);
       newImg.classList.add("lightbox__image");
+       const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+         lightbox.appendChild(newTitle);
       lightbox.appendChild(newImg);
     }
     if (p == 0) {
@@ -195,6 +207,11 @@ function lightbox() {
       const splitSource = arrayImage[p].src.split("/");
       const sourcePath = splitSource[splitSource.length - 1];
       newSource.setAttribute("alt", sourcePath);
+       const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+         lightbox.appendChild(newTitle);
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
     } else {
@@ -205,6 +222,11 @@ function lightbox() {
       const splitSource = arrayImage[p].src.split("/");
       const sourcePath = splitSource[splitSource.length - 1];
       newImg.setAttribute("alt", sourcePath);
+       const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
+         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+         lightbox.appendChild(newTitle);
       lightbox.appendChild(newImg);
     }
   }
