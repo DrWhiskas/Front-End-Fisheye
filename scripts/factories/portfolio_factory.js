@@ -8,9 +8,9 @@ function portfolioFactory(media) {
 
   function getPhotographersPortfolio() {
     const link = document.createElement("article");
+    link.classList.add("portfolio");
     if (media.video) {
       link.innerHTML = `
-            <div class ="portfolio">
                 <div class ="portfolio__link">
                    <video class="portfolio__image" tabindex="3"><source src="${videos}" alt="${media.title}"></source></video> 
                 </div>
@@ -22,11 +22,9 @@ function portfolioFactory(media) {
                             <i class="fa-solid fa-heart fa-2x" aria-label="likes" tabindex="3"></i>
                         </div>
                     </div>
-            </div>
             `;
     } else {
       link.innerHTML = `
-            <div class ="portfolio">
                 <div class ="portfolio__link">
                     <img class = "portfolio__image" src="${picture}"alt="${media.title}" tabindex="3">
                 </div>
@@ -38,7 +36,6 @@ function portfolioFactory(media) {
                             <i class="fa-solid fa-heart fa-2x" aria-label="likes" tabindex="3"></i>
                         </div>
                     </div>
-            </div>
             `;
     }
     const godBless = link.querySelector(".like__heart");
