@@ -106,6 +106,9 @@ function lightbox() {
       images = document.querySelectorAll(".portfolio__image");
       arrayImage = Array.from(images); // convertisseur en tableau
       p--;
+    if (p < 0) {
+      p = images.length -1;
+    }
       lightbox.innerHTML = ``;
       if (arrayImage[p].nodeName == "VIDEO") {
         const newVideo = document.createElement("video");
@@ -139,9 +142,7 @@ function lightbox() {
          lightbox.appendChild(newTitle);
         lightbox.appendChild(newImg);
       }
-      if (p == 0) {
-        p = images.length;
-      }
+      
     });
   }
   // EVENEMENT FERMETURE DE LA LIGHTBOX
