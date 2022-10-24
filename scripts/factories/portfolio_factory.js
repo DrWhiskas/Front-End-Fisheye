@@ -17,7 +17,7 @@ function portfolioFactory(media) {
                 <div class="portfolio__info">
                     <h2>${media.title}</h2>
                     <div class="likes">
-                        <h2>${like}</h2>
+                        <h2 class="portfolio__likes">${like}</h2>
                         <div class="like__heart">
                             <i class="fa-solid fa-heart fa-2x" aria-label="likes" tabindex="3"></i>
                         </div>
@@ -38,13 +38,22 @@ function portfolioFactory(media) {
                     </div>
             `;
     }
+    let oui = false;
     const godBless = link.querySelector(".like__heart");
     godBless.addEventListener("click", (e) => {
       let newLike = e.target.closest("div").previousElementSibling;
-      const testLike = Number(newLike.innerText) + 1;
+      let testLike = Number(newLike.innerText);
+      if (oui == false) {
+        oui = true;
+        testLike = Number(newLike.innerText) + 1;
+      } else {
+        oui = false;
+        testLike = Number(newLike.innerText) - 1;
+      }
+      console.log(testLike);
       newLike.innerText = testLike;
     });
-
+    
     return link;
   }
 

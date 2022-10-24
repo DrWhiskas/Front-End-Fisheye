@@ -1,4 +1,3 @@
-
 function getNewMedia() {
   //fetch
   let myRequest = new Request("../data/photographers.json");
@@ -31,6 +30,7 @@ function getNewMedia() {
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           likeTotal += media.likes;
+          
           //incrementValues(likeTotal);
         }
       });
@@ -62,17 +62,20 @@ function getNewMedia() {
         data.media.forEach((media)=>{
                if (media.photographerId == photographerId) {
                  displayData(media); // affiche les photos
+                 totallike(media);
                }
         })
           lightbox();
       });
-      document.getElementById("photograph_likes").innerHTML = `
+      const totallikeContent = document.getElementById("photograph_likes").innerHTML = `
         <div class = "photograph_likes-content"">
-          <p value="${likeTotal}" id="pls" onclick="sah()"> ${likeTotal} <i class="fa-solid fa-heart"></i></p>
+          <p class="like-number" value="${likeTotal}" id="totallike"> ${likeTotal} <i class="fa-solid fa-heart"></i></p>
           <p> ${pricePhotograph}€ /jour</p>
           </div>
       `;
+
     });
+
 }
 getNewMedia();
 function displayData(media) {
