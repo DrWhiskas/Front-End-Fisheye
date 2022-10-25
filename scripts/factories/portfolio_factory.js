@@ -41,19 +41,25 @@ function portfolioFactory(media) {
     let oui = false;
     const godBless = link.querySelector(".like__heart");
     godBless.addEventListener("click", (e) => {
+            const toto = document.querySelector(".like-number");
+            console.log(toto);
+
+
       let newLike = e.target.closest("div").previousElementSibling;
       let testLike = Number(newLike.innerText);
       if (oui == false) {
         oui = true;
         testLike = Number(newLike.innerText) + 1;
+        toto.innerText = Number(toto.innerText) +1
       } else {
         oui = false;
         testLike = Number(newLike.innerText) - 1;
+         toto.innerText = Number(toto.innerText) - 1;
       }
       console.log(testLike);
       newLike.innerText = testLike;
     });
-    
+
     return link;
   }
 
