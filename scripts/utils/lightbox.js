@@ -2,11 +2,11 @@ let eventListener = false
 let eventListenerPrev = false
 let eventListenerKeyPrev = false
 let p = 0;
+/* CREATION DE LA LIGHTBOX */
 function lightbox() {
   const lightbox = document.getElementById("lightbox");
   let images = document.querySelectorAll(".portfolio__image");
   let arrayImage = Array.from(images); // convertisseur en tableau
-
   const lightboxContent = document.getElementById("lightboxButton");
   const lightboxNext = document.getElementById("lightbox__next");
   const lightboxPrev = document.getElementById("lightbox__prev");
@@ -16,7 +16,6 @@ function lightbox() {
     image.addEventListener("click", (e) => {
       lightbox.classList.add("active");
       lightboxContent.classList.add("active");
-
       const img = document.createElement("img");
       img.classList.add("lightbox__image");
       p = arrayImage.indexOf(e.target);
@@ -32,6 +31,13 @@ function lightbox() {
       } else {
         img.src = image.src;
         lightbox.innerHTML = ``;
+        const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        let lightboxTitle =
+          arrayImage[p].closest("div").nextElementSibling.firstElementChild
+            .innerText;
+        newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
+        lightbox.appendChild(newTitle);
         lightbox.appendChild(img);
       }
     });
