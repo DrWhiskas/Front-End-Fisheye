@@ -62,7 +62,7 @@ function getNewMedia() {
         data.media.forEach((media)=>{
                if (media.photographerId == photographerId) {
                  displayData(media); // affiche les photos
-                 totallike(media);
+                 //totallike(media);
                }
         })
           lightbox();
