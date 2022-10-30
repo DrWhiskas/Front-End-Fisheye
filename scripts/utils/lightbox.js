@@ -74,6 +74,7 @@ function lightbox() {
       if (arrayImage[p].nodeName == "VIDEO") {
         const newVideo = document.createElement("video");
         const newSource = document.createElement("source");
+        newVideo.setAttribute("controls", "true");
         newVideo.classList.add("lightbox__video");
         let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
         newSource.setAttribute("src", mediaSource);
@@ -118,6 +119,7 @@ function lightbox() {
       lightbox.innerHTML = ``;
       if (arrayImage[p].nodeName == "VIDEO") {
         const newVideo = document.createElement("video");
+        newVideo.setAttribute("controls", "true");
         const newSource = document.createElement("source");
         newVideo.classList.add("lightbox__video");
         let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
@@ -173,6 +175,7 @@ function lightbox() {
     if (arrayImage[p].nodeName == "VIDEO") {
       const newVideo = document.createElement("video");
       const newSource = document.createElement("source");
+      newVideo.setAttribute("controls", "true");
       newVideo.classList.add("lightbox__video");
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);
@@ -202,42 +205,6 @@ function lightbox() {
       lightbox.appendChild(newTitle);
       lightbox.appendChild(newImg);
     }
-   
-
-
-    /*images = document.querySelectorAll(".portfolio__image");
-    arrayImage = Array.from(images); // convertisseur en tableau
-    p--;
-    lightbox.innerHTML = ``;
-    if (arrayImage[p].nodeName == "VIDEO") {
-      const newVideo = document.createElement("video");
-      const newSource = document.createElement("source");
-      newVideo.classList.add("lightbox__video");
-      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
-      newSource.setAttribute("src", mediaSource);
-      const newTitle = document.createElement("div");
-      newTitle.className = "lightbox__title";
-      let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-      newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-      lightbox.appendChild(newTitle);
-      lightbox.appendChild(newVideo);
-      newVideo.appendChild(newSource);
-    } else {
-      const newImg = document.createElement("img");
-      let newArray = arrayImage[p].getAttribute("src");
-      newImg.setAttribute("src", newArray);
-      newImg.classList.add("lightbox__image");
-      const newTitle = document.createElement("div");
-      newTitle.className = "lightbox__title";
-      let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-      newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-      lightbox.appendChild(newTitle);
-      lightbox.appendChild(newImg);
-    }
-    if (p == 0) {
-      p = images.length;
-    }
-    */
   }
   function lightboxNextMedia() {
     images = document.querySelectorAll(".portfolio__image");
@@ -250,6 +217,7 @@ function lightbox() {
     if (arrayImage[p].nodeName == "VIDEO") {
       const newVideo = document.createElement("video");
       const newSource = document.createElement("source");
+      newVideo.setAttribute("controls", "true");
       newVideo.classList.add("lightbox__video");
       let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
       newSource.setAttribute("src", mediaSource);

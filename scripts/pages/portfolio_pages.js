@@ -67,12 +67,15 @@ function getNewMedia() {
         })
           lightbox();
       });
-      const totallikeContent = document.getElementById("photograph_likes").innerHTML = `
+      const totallikeContent = (document.getElementById(
+        "photograph_likes"
+      ).innerHTML = `
         <div class = "photograph_likes-content"">
-          <p class="like-number" value="${likeTotal}" id="totallike"> ${likeTotal} <i class="fa-solid fa-heart"></i></p>
+          <p class="like-number" value="${likeTotal}" id="totallike"> ${likeTotal} </p>
+          <i class="fa-solid fa-heart"></i>
           <p> ${pricePhotograph}€ /jour</p>
           </div>
-      `;
+      `);
 
     });
 
