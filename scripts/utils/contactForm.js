@@ -1,4 +1,3 @@
-
 function displayModal() {
   const modal = document.getElementById("contact_modal")
   modal.style.display = "block"
@@ -32,13 +31,9 @@ submit.addEventListener("click", (e) => {
     console.log("message : " + myMessage.value);
     closeModal();
     form.reset()
-    
   }
 
-  
 });
-
-
 let myFirstname = document.getElementById("first");
 let myLastname = document.getElementById("last");
 let myEmail = document.getElementById("email");

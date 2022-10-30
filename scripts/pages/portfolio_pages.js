@@ -30,8 +30,6 @@ function getNewMedia() {
       data.media.forEach((media) => {
         if (media.photographerId == photographerId) {
           likeTotal += media.likes;
-          
-          //incrementValues(likeTotal);
         }
       });
       lightbox();

@@ -38,28 +38,23 @@ function portfolioFactory(media) {
                     </div>
             `;
     }
-    let oui = false;
-    const godBless = link.querySelector(".like__heart");
-    godBless.addEventListener("click", (e) => {
-            const toto = document.querySelector(".like-number");
-            console.log(toto);
-
-
+    let check = false;
+    const likeSelector = link.querySelector(".like__heart");
+    likeSelector.addEventListener("click", (e) => {
+      const likenumber = document.querySelector(".like-number");
       let newLike = e.target.closest("div").previousElementSibling;
       let testLike = Number(newLike.innerText);
-      if (oui == false) {
-        oui = true;
+      if (check == false) {
+        check = true;
         testLike = Number(newLike.innerText) + 1;
-        toto.innerText = Number(toto.innerText) +1
+        likenumber.innerText = Number(likenumber.innerText) + 1;
       } else {
-        oui = false;
+        check = false;
         testLike = Number(newLike.innerText) - 1;
-         toto.innerText = Number(toto.innerText) - 1;
+        likenumber.innerText = Number(likenumber.innerText) - 1;
       }
-      console.log(testLike);
       newLike.innerText = testLike;
     });
-
     return link;
   }
 

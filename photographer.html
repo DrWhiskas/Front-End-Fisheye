@@ -50,7 +50,9 @@
     <div id="contact_modal">
       <div class="modal">
         <header>
-          <h2>Contactez-moi</h2>
+          <div class="modal__title">
+            <h2 class="contact_modal__name"></h2>
+          </div>
           <img src="assets/icons/close.svg" class="close" onclick="closeModal()" aria/>
         </header>
         <form name="sendMessage" method="get" id="form">
@@ -68,7 +70,7 @@
           </div>
           <div>
             <label for="message">Votre message</label>
-            <input class="text-modal" type="text" id="message" name="message" />
+            <textarea class="text-modal" type="text" id="message" name="message"></textarea>
           </div>
           <button id="contact__submit" class="contact_button" type="submit"  value="envoyer" aria-label="Envoyer un message"> Envoyer</button>
         </form>

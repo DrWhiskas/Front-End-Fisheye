@@ -26,8 +26,15 @@ function lightbox() {
         source.src = image.firstElementChild.src;
         video.classList.add("lightbox__video");
         lightbox.innerHTML = ``;
+        const newTitle = document.createElement("div");
+        newTitle.className = "lightbox__title";
+        let lightboxTitle =
+          arrayImage[p].closest("div").nextElementSibling.firstElementChild
+            .innerText;
+        newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(video);
         video.appendChild(source);
+        lightbox.appendChild(newTitle);
       } else {
         img.src = image.src;
         lightbox.innerHTML = ``;
@@ -36,9 +43,9 @@ function lightbox() {
         let lightboxTitle =
           arrayImage[p].closest("div").nextElementSibling.firstElementChild
             .innerText;
-        newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-        lightbox.appendChild(newTitle);
+        newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(img);
+         lightbox.appendChild(newTitle);
       }
     });
   });
@@ -49,12 +56,15 @@ function lightbox() {
     if (touchPress == "ArrowLeft") {
       eventListenerKeyPrev = true;
       lightboxPrevMedia();
-    } else if (touchPress == "ArrowRight") {
+    } 
+    if (touchPress == "ArrowRight") {
       lightboxNextMedia();
-    } else if (touchPress == "Escape") {
+    }
+    if (touchPress == "Escape") {
       lightboxCloseMedia();
-    } else {
-      console.log("error");
+    }
+    if (touchPress == "Enter") {
+      e.target.click()
     }
   });
 }
@@ -84,10 +94,10 @@ function lightbox() {
         const newTitle = document.createElement("div")
          newTitle.className = "lightbox__title";
         let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-         lightbox.appendChild(newTitle);
+         newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
+        lightbox.appendChild(newTitle);
       } else {
         const newImg = document.createElement("img");
         let newArray = arrayImage[p].getAttribute("src");
@@ -99,9 +109,9 @@ function lightbox() {
          const newTitle = document.createElement("div");
          newTitle.className= "lightbox__title"
         let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-         newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-         lightbox.appendChild(newTitle);
+         newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;      
         lightbox.appendChild(newImg);
+        lightbox.appendChild(newTitle);
       }
     });
   }
@@ -130,10 +140,10 @@ function lightbox() {
         const newTitle = document.createElement("div");
         newTitle.className = "lightbox__title";
         let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-        newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-        lightbox.appendChild(newTitle);
+        newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
+        lightbox.appendChild(newTitle);
       } else {
         const newSource = document.createElement("source");
         const newImg = document.createElement("img");
@@ -146,9 +156,9 @@ function lightbox() {
         const newTitle = document.createElement("div");
         newTitle.className = "lightbox__title";
         let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-        newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-        lightbox.appendChild(newTitle);
+        newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(newImg);
+        lightbox.appendChild(newTitle);
       } 
     });
   }
@@ -185,10 +195,10 @@ function lightbox() {
       const newTitle = document.createElement("div");
       newTitle.className = "lightbox__title";
       let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText;
-      newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-      lightbox.appendChild(newTitle);
+      newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
+      lightbox.appendChild(newTitle);
     } else {
       const newSource = document.createElement("source");
       const newImg = document.createElement("img");
@@ -201,9 +211,9 @@ function lightbox() {
       const newTitle = document.createElement("div");
       newTitle.className = "lightbox__title";
       let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText;
-      newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-      lightbox.appendChild(newTitle);
+      newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
       lightbox.appendChild(newImg);
+      lightbox.appendChild(newTitle);
     }
   }
   function lightboxNextMedia() {
@@ -227,10 +237,10 @@ function lightbox() {
       const newTitle = document.createElement("div");
       newTitle.className = "lightbox__title";
       let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-      newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-      lightbox.appendChild(newTitle);
+      newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
+      lightbox.appendChild(newTitle);
     } else {
       const newImg = document.createElement("img");
       let newArray = arrayImage[p].getAttribute("src");
@@ -242,9 +252,9 @@ function lightbox() {
       const newTitle = document.createElement("div");
       newTitle.className = "lightbox__title";
       let lightboxTitle = arrayImage[p].closest("div").nextElementSibling.firstElementChild.innerText
-      newTitle.innerHTML = `<h1>${lightboxTitle}</h1>`;
-      lightbox.appendChild(newTitle);
+      newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
       lightbox.appendChild(newImg);
+      lightbox.appendChild(newTitle);
     } 
   }
   function lightboxCloseMedia() {

@@ -1,7 +1,7 @@
 function photographFa(data2) {
   const { name, portrait, id, tagline, city, country } = data2;
   const userPicure = `assets/photographers/${portrait}`;
-
+  
   function getContact() {
     const link = document.createElement("section");
     link.innerHTML = `
@@ -16,6 +16,8 @@ function photographFa(data2) {
             <img src="${userPicure}" alt="${data2.name}">
     </div>
         `;
+            const modalTitle = document.querySelector(".contact_modal__name");
+            modalTitle.innerText = `Contactez-moi ${data2.name}`;
     return link;
   }
   return { portrait, getContact };

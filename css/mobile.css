@@ -8,6 +8,7 @@
     }
     .portfolio{
         width: 100%;
+        margin-bottom: 12%;
     }
     #photograph_likes{
         position: relative;
@@ -18,7 +19,6 @@
         width: 100%;
     }
     #filter{
-        margin-top: 205px;
         text-align: center;
     }
     .contact{
@@ -30,5 +30,34 @@
     #contact_button{
         margin-top: 3%;
     }
-
+    .modal{
+        width: 100%;
+        overflow: hidden;
+        height: 100vh;
+        top: 0;
+        justify-content: center;
+    }
+    .modal header img{
+        position: relative;
+        right: 10%;
+    }
+    form{
+        width: 90%;
+        margin-top: 3%;
+    }
+    form input{
+        height: 38px;
+    }
+    .index-header{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 8%;
+    }
+    .logo{
+        margin: 0;
+    }
+    .index-header h1{
+        margin: 0;
+    } 
 }

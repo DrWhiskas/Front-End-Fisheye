@@ -47,13 +47,13 @@
 }
 #photograph_likes {
   position: fixed;
-  top: 94%;
-  left: 85%;
+  bottom: 0;
+  right: 7%;
 }
 .photograph_likes-content {
   display: flex;
   flex-wrap: nowrap;
-  width: 180%;
+  width: 180px;
   height: auto;
   align-items: center;
   background: #db8876;
