@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
-    <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/a9f81c8e8d.js" crossorigin="anonymous"></script>
@@ -53,7 +52,7 @@
           <div class="modal__title">
             <h2 class="contact_modal__name"></h2>
           </div>
-          <img src="assets/icons/close.svg" class="close" onclick="closeModal()" aria/>
+          <img src="assets/icons/close.svg" class="close" alt="icone pour fermer la lightbox" onclick="closeModal()" aria-label="image closeup view"/>
         </header>
         <form name="sendMessage" method="get" id="form">
           <div>
@@ -70,7 +69,7 @@
           </div>
           <div>
             <label for="message">Votre message</label>
-            <textarea class="text-modal" type="text" id="message" name="message"></textarea>
+            <textarea class="text-modal" id="message" name="message"></textarea>
           </div>
           <button id="contact__submit" class="contact_button" type="submit"  value="envoyer" aria-label="Envoyer un message"> Envoyer</button>
         </form>
