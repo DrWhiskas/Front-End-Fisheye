@@ -49,34 +49,31 @@ function getNewMedia() {
               return -1;
             }
           });
-        }
-        else if(testT == "date"){
-          data.media.sort((function (a,b){
-            return new Date(b.date) - new Date(a.date)
-          }))
+        } else if (testT == "date") {
+          data.media.sort(function (a, b) {
+            return new Date(b.date) - new Date(a.date);
+          });
         }
         const mediaList = document.querySelector(".photograph_portfolio");
-        mediaList.innerHTML =``
-        data.media.forEach((media)=>{
-               if (media.photographerId == photographerId) {
-                 displayData(media); // affiche les photos
-                 //totallike(media);
-               }
-        })
-          lightbox();
+        mediaList.innerHTML = ``;
+        data.media.forEach((media) => {
+          if (media.photographerId == photographerId) {
+            displayData(media); // affiche les photos
+            //totallike(media);
+          }
+        });
+        lightbox();
       });
       const totallikeContent = (document.getElementById(
         "photograph_likes"
       ).innerHTML = `
-        <div class = "photograph_likes-content"">
+        <div class = "photograph_likes-content">
           <p class="like-number" value="${likeTotal}" id="totallike"> ${likeTotal} </p>
           <i class="fa-solid fa-heart"></i>
           <p> ${pricePhotograph}€ /jour</p>
           </div>
       `);
-
     });
-
 }
 getNewMedia();
 function displayData(media) {

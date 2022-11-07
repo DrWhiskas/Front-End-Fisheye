@@ -5,13 +5,14 @@ function getPhotographers() {
     .then((res) => res.json()) // convertisseur json => js
     .then((data) => {
       displayData(data.photographers);
-      
     });
-    return 0
+  return 0;
 }
 
 function displayData(photographers) {
-  const photographersSection = document.querySelector(".photographer__container");
+  const photographersSection = document.querySelector(
+    ".photographer__container"
+  );
 
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);

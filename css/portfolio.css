@@ -48,16 +48,16 @@
 #photograph_likes {
   position: fixed;
   bottom: 0;
-  right: 7%;
+  right: 2%;
 }
 .photograph_likes-content {
   display: flex;
-  flex-wrap: nowrap;
-  width: 180px;
+  width: 200px;
   height: auto;
   align-items: center;
   background: #db8876;
   justify-content: space-around;
+  border-radius: 5px;
 }
 .photograph_likes-content p {
   font-size: 100%;
