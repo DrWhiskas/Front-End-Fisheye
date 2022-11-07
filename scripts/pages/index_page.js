@@ -2,10 +2,12 @@ function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
   let myRequest = new Request("../data/photographers.json");
   fetch(myRequest)
-    .then((res) => res.json())
+    .then((res) => res.json()) // convertisseur json => js
     .then((data) => {
       displayData(data.photographers);
+      
     });
+    return 0
 }
 
 function displayData(photographers) {
@@ -17,11 +19,4 @@ function displayData(photographers) {
     photographersSection.appendChild(userCardDOM);
   });
 }
-
-async function init() {
-  // Récupère les datas des photographes
-  const { photographers } = await getPhotographers();
-  displayData(photographers);
-}
-
-init();
+getPhotographers();
