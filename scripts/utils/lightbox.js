@@ -270,7 +270,7 @@ function lightbox() {
     }
   }
   function lightboxCloseMedia() {
-    lightbox.classList.remove("active");
-    lightboxContent.classList.remove("active");
+    lightbox.classList.remove('active');
+    lightboxContent.classList.remove('active');
   }
 }
