@@ -7,8 +7,8 @@ function portfolioFactory(media) {
   const videos = `assets/Sample Photos/${photographerId}/${video}`;
 
   function getPhotographersPortfolio() {
-    const link = document.createElement("article");
-    link.classList.add("portfolio");
+    const link = document.createElement('article');
+    link.classList.add('portfolio');
     if (media.video) {
       link.innerHTML = `
                 <div class ="portfolio__link">
@@ -39,10 +39,10 @@ function portfolioFactory(media) {
             `;
     }
     let check = false;
-    const likeSelector = link.querySelector(".like__heart");
-    likeSelector.addEventListener("click", (e) => {
-      const likenumber = document.querySelector(".like-number");
-      let newLike = e.target.closest("div").previousElementSibling;
+    const likeSelector = link.querySelector('.like__heart');
+    likeSelector.addEventListener('click', (e) => {
+      const likenumber = document.querySelector('.like-number');
+      let newLike = e.target.closest('div').previousElementSibling;
       let testLike = Number(newLike.innerText);
       if (check == false) {
         check = true;

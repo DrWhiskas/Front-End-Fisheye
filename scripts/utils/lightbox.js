@@ -128,37 +128,37 @@ function lightbox() {
       }
       lightbox.innerHTML = ``;
       if (arrayImage[p].nodeName == "VIDEO") {
-        const newVideo = document.createElement("video");
-        newVideo.setAttribute("controls", "true");
-        const newSource = document.createElement("source");
-        newVideo.classList.add("lightbox__video");
-        let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
-        newSource.setAttribute("src", mediaSource);
-        const splitSource = arrayImage[p].src.split("/");
+        const newVideo = document.createElement('video');
+        newVideo.setAttribute('controls', 'true');
+        const newSource = document.createElement('source');
+        newVideo.classList.add('lightbox__video');
+        let mediaSource = arrayImage[p].firstElementChild.getAttribute('src');
+        newSource.setAttribute('src', mediaSource);
+        const splitSource = arrayImage[p].src.split('/');
         const sourcePath = splitSource[splitSource.length - 1];
-        newSource.setAttribute("alt", sourcePath);
-        const newTitle = document.createElement("div");
-        newTitle.className = "lightbox__title";
+        newSource.setAttribute('alt', sourcePath);
+        const newTitle = document.createElement('div');
+        newTitle.className = 'lightbox__title';
         let lightboxTitle =
-          arrayImage[p].closest("div").nextElementSibling.firstElementChild
+          arrayImage[p].closest('div').nextElementSibling.firstElementChild
             .innerText;
         newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(newVideo);
         newVideo.appendChild(newSource);
         lightbox.appendChild(newTitle);
       } else {
-        const newSource = document.createElement("source");
-        const newImg = document.createElement("img");
-        let newArray = arrayImage[p].getAttribute("src");
-        newImg.setAttribute("src", newArray);
-        newImg.classList.add("lightbox__image");
-        const splitSource = arrayImage[p].src.split("/");
+        const newSource = document.createElement('source');
+        const newImg = document.createElement('img');
+        let newArray = arrayImage[p].getAttribute('src');
+        newImg.setAttribute('src', newArray);
+        newImg.classList.add('lightbox__image');
+        const splitSource = arrayImage[p].src.split('/');
         const sourcePath = splitSource[splitSource.length - 1];
-        newSource.setAttribute("alt", sourcePath);
-        const newTitle = document.createElement("div");
-        newTitle.className = "lightbox__title";
+        newSource.setAttribute('alt', sourcePath);
+        const newTitle = document.createElement('div');
+        newTitle.className = 'lightbox__title';
         let lightboxTitle =
-          arrayImage[p].closest("div").nextElementSibling.firstElementChild
+          arrayImage[p].closest('div').nextElementSibling.firstElementChild
             .innerText;
         newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
         lightbox.appendChild(newImg);
@@ -167,19 +167,19 @@ function lightbox() {
     });
   }
   // EVENEMENT FERMETURE DE LA LIGHTBOX
-  lightbox.addEventListener("click", (e) => {
+  lightbox.addEventListener('click', (e) => {
     if (e.target !== e.currentTarget) return;
-    lightbox.classList.remove("active");
-    lightboxContent.classList.remove("active");
+    lightbox.classList.remove('active');
+    lightboxContent.classList.remove('active');
   });
   // EVENT BOUTON DE FERMETURE
-  lightboxClose.addEventListener("click", (e) => {
-    lightbox.classList.remove("active");
-    lightboxContent.classList.remove("active");
+  lightboxClose.addEventListener('click', (e) => {
+    lightbox.classList.remove('active');
+    lightboxContent.classList.remove('active');
   });
 
   function lightboxPrevMedia() {
-    images = document.querySelectorAll(".portfolio__image");
+    images = document.querySelectorAll('.portfolio__image');
     arrayImage = Array.from(images); // convertisseur en tableau
     p--;
     if (p < 0) {
@@ -187,37 +187,37 @@ function lightbox() {
     }
     lightbox.innerHTML = ``;
     if (arrayImage[p].nodeName == "VIDEO") {
-      const newVideo = document.createElement("video");
-      const newSource = document.createElement("source");
-      newVideo.setAttribute("controls", "true");
-      newVideo.classList.add("lightbox__video");
-      let mediaSource = arrayImage[p].firstElementChild.getAttribute("src");
-      newSource.setAttribute("src", mediaSource);
-      const splitSource = arrayImage[p].src.split("/");
+      const newVideo = document.createElement('video');
+      const newSource = document.createElement('source');
+      newVideo.setAttribute('controls', 'true');
+      newVideo.classList.add('lightbox__video');
+      let mediaSource = arrayImage[p].firstElementChild.getAttribute('src');
+      newSource.setAttribute('src', mediaSource);
+      const splitSource = arrayImage[p].src.split('/');
       const sourcePath = splitSource[splitSource.length - 1];
-      newSource.setAttribute("alt", sourcePath);
-      const newTitle = document.createElement("div");
-      newTitle.className = "lightbox__title";
+      newSource.setAttribute('alt', sourcePath);
+      const newTitle = document.createElement('div');
+      newTitle.className = 'lightbox__title';
       let lightboxTitle =
-        arrayImage[p].closest("div").nextElementSibling.firstElementChild
+        arrayImage[p].closest('div').nextElementSibling.firstElementChild
           .innerText;
       newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
       lightbox.appendChild(newVideo);
       newVideo.appendChild(newSource);
       lightbox.appendChild(newTitle);
     } else {
-      const newSource = document.createElement("source");
-      const newImg = document.createElement("img");
-      let newArray = arrayImage[p].getAttribute("src");
-      newImg.setAttribute("src", newArray);
-      newImg.classList.add("lightbox__image");
-      const splitSource = arrayImage[p].src.split("/");
+      const newSource = document.createElement('source');
+      const newImg = document.createElement('img');
+      let newArray = arrayImage[p].getAttribute('src');
+      newImg.setAttribute('src', newArray);
+      newImg.classList.add('lightbox__image');
+      const splitSource = arrayImage[p].src.split('/');
       const sourcePath = splitSource[splitSource.length - 1];
-      newSource.setAttribute("alt", sourcePath);
-      const newTitle = document.createElement("div");
-      newTitle.className = "lightbox__title";
+      newSource.setAttribute('alt', sourcePath);
+      const newTitle = document.createElement('div');
+      newTitle.className = 'lightbox__title';
       let lightboxTitle =
-        arrayImage[p].closest("div").nextElementSibling.firstElementChild
+        arrayImage[p].closest('div').nextElementSibling.firstElementChild
           .innerText;
       newTitle.innerHTML = `<h1 class="image__title">${lightboxTitle}</h1>`;
       lightbox.appendChild(newImg);

@@ -1,6 +1,6 @@
 function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
-  let myRequest = new Request("../data/photographers.json");
+  let myRequest = new Request('../data/photographers.json');
   fetch(myRequest)
     .then((res) => res.json()) // convertisseur json => js
     .then((data) => {
@@ -11,7 +11,7 @@ function getPhotographers() {
 
 function displayData(photographers) {
   const photographersSection = document.querySelector(
-    ".photographer__container"
+    '.photographer__container'
   );
 
   photographers.forEach((photographer) => {

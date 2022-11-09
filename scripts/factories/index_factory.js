@@ -4,7 +4,7 @@ function photographerFactory(data) {
   const picture = `assets/photographers/${portrait}`;
 
   function getUserCardDOM() {
-    const link = document.createElement("article");
+    const link = document.createElement('article');
     link.className = "photographer__card";
     link.innerHTML = `
                 <a href="photographer.html?id=${data.id}"> 
