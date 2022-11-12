@@ -1,7 +1,6 @@
 function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
-  const myRequest = new Request('../data/photographers.json');
-  fetch(myRequest)
+  fetch('./data/photographers.json')
       .then((res) => res.json()) // convertisseur json => js
       .then((data) => {
         displayData(data.photographers);
