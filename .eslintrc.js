@@ -12,7 +12,5 @@ module.exports = {
   'rules': {
     'no-unused-vars': 'off',
     'require-jsdoc' : 0
-
-
   }
 }
