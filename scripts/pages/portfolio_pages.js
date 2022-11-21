@@ -32,7 +32,6 @@ function getNewMedia() {
           }
         });
         lightbox();
-
         // TRIER LES IMAGES
         const filterPhoto = document.querySelector('#filter-photo');
         filterPhoto.addEventListener('change', (e) => {
@@ -62,8 +61,8 @@ function getNewMedia() {
           });
           lightbox();
         });
-        const totallikeContent = (document.getElementById(
-            'photograph_likes')
+        const totallikeContent =
+        (document.getElementById('photograph_likes')
             .innerHTML = `
         <div class = "photograph_likes-content">
           <p 
@@ -71,8 +70,8 @@ function getNewMedia() {
             value="${likeTotal}"
             id="totallike"> ${likeTotal} 
           </p>
-          <i class="fa-solid fa-heart"></i>
-          <p> ${pricePhotograph}€ /jour</p>
+          <i class="fa-solid fa-heart photograph_likes__icon"></i>
+          <p class="photograph_likes__price"> ${pricePhotograph}€ /jour</p>
           </div>
       `);
       });

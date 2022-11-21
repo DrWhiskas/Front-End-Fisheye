@@ -1,15 +1,6 @@
-/**
- * 
- * @param {*} data2 - les données des photogrpahes.
- * @return {*}
- */
 function photographFa(data2) {
   const {name, portrait, tagline, city, country} = data2;
   const userPicure = `assets/photographers/${portrait}`;
-  /**
-  * 
-  * @return {HTMLElement}
-  */
   function getContact() {
     const link = document.createElement('section');
     link.innerHTML = `

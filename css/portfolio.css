@@ -56,9 +56,18 @@
   height: auto;
   align-items: center;
   background: #db8876;
-  justify-content: space-around;
   border-radius: 5px;
+  font-weight: bolder;
 }
-.photograph_likes-content p {
-  font-size: 100%;
+.photograph_likes__price {
+  position: relative;
+  left: 30%;
+}
+.photograph_likes__icon{
+  position: relative;
+  left: 6%;
+}
+.like-number{
+  position: relative;
+  left: 4%;
 }
