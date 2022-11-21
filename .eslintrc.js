@@ -11,6 +11,7 @@ module.exports = {
   },
   'rules': {
     'no-unused-vars': 'off',
-    'require-jsdoc' : 0
+    'require-jsdoc': 0,
+    'comma-dangle': [0, 'always-multiline']
   }
 }
