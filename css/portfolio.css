@@ -27,6 +27,7 @@
   display: flex;
   justify-content: space-between;
   color: #901c1c;
+  margin-top: 10px;
 }
 .portfolio__info h2 {
   margin: 0;
