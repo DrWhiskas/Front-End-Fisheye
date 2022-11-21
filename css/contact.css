@@ -9,10 +9,12 @@
 .contact__information__name {
   color: #d3573c;
   font-size: 36px;
+  font-weight: 400;
   line-height: 47px;
   margin: 0;
 }
 .contact__information__city{
   color: #901C1C;
   margin-top: 1%;
+  font-weight: 400;
 }

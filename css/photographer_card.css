@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin: 1% 6%;
-  width: 250px;
+  width: 243px;
 }
 .photographer__portrait {
   display: flex;
@@ -27,24 +27,26 @@
 .photographer__name {
   margin-bottom: 0;
   color: #d3573c;
-  font-size: 36px;
+  font-size: 29px;
   line-height: 47px;
 }
 
 .photographer__info__localisation {
   color: #901c1c;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 18px;
   line-height: 17px;
+  margin-top: 0;
+  margin-bottom: 7px;
 }
 .photographer__info__tagline {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 13px;
 }
 .photographer__info__price {
   color: #757575;
   font-weight: 400;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 12px;
 }
