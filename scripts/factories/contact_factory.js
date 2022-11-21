@@ -6,7 +6,7 @@ function photographFa(data2) {
     link.innerHTML = `
     <div class="contact">
         <div class="contact__information">
-            <h2 class="contact__information__name photographer__name">
+            <h2 class="contact__information__name">
               ${name}
             </h2>
             <h3 class="contact__information__city">${city},${country}</h3>

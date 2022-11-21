@@ -6,3 +6,13 @@
 .contact__information {
   align-self: center;
 }
+.contact__information__name {
+  color: #d3573c;
+  font-size: 36px;
+  line-height: 47px;
+  margin: 0;
+}
+.contact__information__city{
+  color: #901C1C;
+  margin-top: 1%;
+}
