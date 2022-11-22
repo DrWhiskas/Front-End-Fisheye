@@ -21,7 +21,7 @@ function portfolioFactory(media) {
                    </video> 
                 </div>
                 <div class="portfolio__info">
-                    <h2>${media.title}</h2>
+                    <h2 class="portfolio__info__title">${media.title}</h2>
                     <div class="likes">
                         <h2 class="portfolio__likes">${like}</h2>
                         <div class="like__heart">
@@ -44,7 +44,7 @@ function portfolioFactory(media) {
                     >
                 </div>
                 <div class="portfolio__info">
-                    <h2>${media.title}</h2>
+                    <h2 class="portfolio__info__title">${media.title}</h2>
                     <div class="likes">
                         <h2 class="portfolio__likes">${like}</h2>
                         <div class="like__heart">
