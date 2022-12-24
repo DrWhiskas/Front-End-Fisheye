@@ -3,9 +3,10 @@ function getPhotographers() {
   fetch('./data/photographers.json')
       .then((res) => res.json()) // convertisseur json => js
       .then((data) => {
+        console.log(data.photographers);
         displayData(data.photographers);
       });
-  return 0;
+ // return 0;
 }
 
 function displayData(photographers) {
