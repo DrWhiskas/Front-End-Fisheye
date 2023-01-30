@@ -268,4 +268,4 @@ function lightbox() {
     lightboxContent.classList.remove('active');
   }
 }
-/* REFACTORIEZ */
+/* REFACTORISER */
