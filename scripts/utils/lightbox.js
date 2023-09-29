@@ -22,7 +22,6 @@ function lightbox() {
 			lightbox.classList.add('active');
 			lightboxContent.classList.add('active');
 			p = arrayImage.indexOf(e.target);
-			console.log(p, 'numero');
 			const isVideo = e.target.nodeName === 'VIDEO';
 			const mediaElement = CreateMedia(
 				isVideo ? e.target.firstElementChild.src : e.target.src,
@@ -62,7 +61,6 @@ function lightbox() {
 				images = document.querySelectorAll('.portfolio__image');
 				arrayImage = Array.from(images); // convertisseur en tableau
 				changeMedia('next');
-				console.log('p: ', p);
 			}
 			if (touchPress == 'Escape') {
 				closeLightbox(lightbox, lightboxContent);
@@ -74,7 +72,6 @@ function lightbox() {
 	}
 	function changeMedia(direction) {
 		if (direction == 'prev') {
-			console.log('oui');
 			p--;
 			if (p < 0) {
 				p = images.length - 1;

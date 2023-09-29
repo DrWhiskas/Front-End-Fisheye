@@ -29,13 +29,14 @@ function CreateMedia(src, cible, array, count, isVideo) {
 	newTitle.innerHTML = `<h1 class='${
 		isVideo ? 'video' : 'image'
 	}__title'>${lightboxTitle}</h1>`;
+	mediaElement.setAttribute('alt', lightboxTitle);
 
 	// Ajoute l'élément multimédia et le titre à la cible
 	cible.appendChild(mediaElement);
 	cible.appendChild(newTitle);
 
 	// Renvoie l'élément multimédia créé
-	return mediaElement;
+	return mediaElement, newTitle;
 }
 function closeLightbox(lightbox, content) {
 	lightbox.classList.remove('active');
