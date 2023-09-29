@@ -3,15 +3,14 @@ function getPhotographers() {
   fetch('./data/photographers.json')
       .then((res) => res.json()) // convertisseur json => js
       .then((data) => {
-        console.log(data.photographers);
         displayData(data.photographers);
       });
- // return 0;
 }
 
 function displayData(photographers) {
   const photographersSection = document.querySelector(
-      '.photographer__container');
+      '.photographer__container'
+  );
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
