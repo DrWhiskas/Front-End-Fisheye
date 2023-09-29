@@ -5,8 +5,8 @@ function getNewMedia() {
       .then((response) => response.json())
       .then((data) => {
         const queryString = window.location.search;
-        const urlParam = new URLSearchParams(queryString);
-        const photographerId = urlParam.get('id');
+        const urlParam = new URLSearchParams(queryString); // créé objet
+        const photographerId = urlParam.get('id'); // extrait l'id
         let likeTotal = 0;
         let pricePhotograph = 0;
         data.media.forEach((media) => {

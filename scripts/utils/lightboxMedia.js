@@ -1,4 +1,4 @@
-function createMedia(src, cible, array, count, isVideo) {
+function createMedia(src, cible, array, count, isVideo) { // *FACTORY
   // Crée un élément vidéo ou image en fonction du paramètre isVideo
   const mediaElement = isVideo ?
   document.createElement('video'):
